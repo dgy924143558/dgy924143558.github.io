@@ -1,221 +1,565 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!-- saved from url=(0027)http://itzoo.info/love.html -->
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Love</title>
-        
-        <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
-        <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-parser.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-jit.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-builderbase.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-async.min.js"></script>
-        <script type="text/javascript" src="./Love_files/jscex-async-powerpack.min.js"></script>
-        <script type="text/javascript" src="./Love_files/functions.js" charset="utf-8"></script>
-        <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
+<!DOCTYPE html>
+<html>
 
-    </head>
-    <body>
-        <div id="main">
-            <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器哟~</div>
-            <div id="wrap">
-               <div id="text">
-                    <div id="code">                 
-                    <span class="say">我的爱人，我会牵着你的手，走到满头白发的那一天，</span><br>
-                    <span class="say">我会守护你生命里的精彩，并陪伴你一路精彩下去。</span><br>
-                    <span class="say">你的幸福快乐，是我一生的追求。</span><br>
-                    <span class="say">我会每一天带着笑脸，和你说早安，</span><br>
-                     <span class="say">我会每一晚与你道声晚安再入梦乡，</span><br>
-                    <span class="say">我会带你去所有你想去的地方，</span><br>
-                    <span class="say">陪你闹看你笑</span><br>
-                    <span class="say">历经你生命中所有的点点滴滴。</span><br>
-                    <span class="say">我期待这一生与你一起走过，</span><br>
-                    <span class="say">我期待与你慢慢变老</span><br>
-                    <span class="say">等我们老到哪儿也去不了，</span><br>
-                    <span class="say">还能满载着一生的幸福快乐 ！</span><br>
-                    <br>
-                    <span class="say">我会为我们的未来撑起一片天空，</span><br>
-                     <span class="say">为我们的将来担负起一生的责任，</span><br>
-                      <span class="say">愿意为你去做每一件能让你开心快乐的事。</span><br>
-                       <span class="say">所有我们经历的点点滴滴，</span><br>
-                        <span class="say">都是我们的一辈子最美的回忆。</span><br>
-                         <span class="say">我愿意爱你直到老去！</span><br>
-                   <br>
-                    <span class="say"><span class="space"></span> -- Yours, GuiYi.</span>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Motion - Responsive HTML Template</title>
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap style -->
+    <link rel="stylesheet" href="css/hero-slider-style.css">
+    <!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <!-- Templatemo style -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
+</head>
+
+<body>
+
+    <!-- Content -->
+    <div class="cd-hero">
+
+        <!-- Navigation -->
+        <div class="cd-slider-nav">
+            <nav class="navbar">
+                <div class="tm-navbar-bg">
+                    <a class="navbar-brand text-uppercase" href="#"><i class="fa fa-send-o tm-brand-icon"></i>Motion</a>
+
+                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                            &#9776;
+                        </button>
+                    <div class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar" id="tmNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item active selected">
+                                <a class="nav-link" href="#0" data-no="1">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#0" data-no="2">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#0" data-no="3">Gallery One</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#0" data-no="4">Gallery Two</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#0" data-no="5">Testimonials</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#0" data-no="6">Contact</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div id="clock-box">
-                    <a target="_blank">董贵义</a> 与 <a  target="_blank">赵鹏群</a> 在一起的
-                        <div id="clock"></div>
-                </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
-            <audio src="love.mp3" autoplay="autoplay"></audio>
+
+            </nav>
         </div>
-    
-    <script>
-    </script>
+
+        <ul class="cd-hero-slider">
+            <!-- autoplay -->
+            <li class="selected">
+                <div class="cd-full-width">
+                    <div class="container-fluid js-tm-page-content tm-page-1" data-page-no="1">
+
+                        <div class="cd-bg-video-wrapper" data-video="video/moving-cloud">
+                            <!-- video element will be loaded using jQuery -->
+                        </div>
+                        <!-- .cd-bg-video-wrapper -->
+
+                        <div class="row">
+
+                            <div class="col-xs-12">
+                                <div class="tm-2-col-container tm-bg-white-translucent">
+
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <h2 class="tm-text-title">Cool Video Backgrounds</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-2-col-left">
+                                            <div class="text-xs-left tm-textbox tm-2-col-textbox">
+                                                <p class="tm-text">Motion web template integrates a very active video background for each page. Download and use this for your website and tell your friends about it.</p>
+                                                <p class="tm-text">This HTML CSS template is brought to you by <a href="http://plus.google.com/+templatemo" target="_blank">templatemo</a>. You can fully customize it to meet your website needs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-2-col-right">
+                                            <div class="text-xs-left tm-textbox tm-2-col-textbox">
+                                                <p class="tm-text">Cras tempus, eros vel ultrices aliquam, velit tortor sodales risus, ac facilisis lectus tortor eget neque. Nam auctor dui ante. Curabitur tristique.</p>
+                                                <p class="tm-text">Quisque sagittis quam tortor, sit amet posuere justo tempor non. Nunc eu leo sit amet elit condimentum.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- .cd-full-width -->
+            </li>
+
+            <li>
+                <div class="cd-full-width">
+
+                    <div class="container-fluid js-tm-page-content" data-page-no="2">
+
+                        <div class="cd-bg-video-wrapper" data-video="video/red-flower">
+                            <!-- video element will be loaded using jQuery -->
+                        </div>
+                        <!-- .cd-bg-video-wrapper -->
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="tm-flex tm-2-col-container-2">
+
+                                    <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
+                                        <h2 class="tm-text-title">Lorem ipsum dolor</h2>
+                                        <p class="tm-text">Nulla efficitur, ligula et imperdiet volutpat, lacus tortor tempus massa, eget tempus quam nibh vel nulla.</p>
+                                        <p class="tm-text">Vivamus non molestie leo, non tincidunt diam. Mauris sagittis elit in velit ultricies aliquet sed in magna.</p>
+                                        <p class="tm-text">Pellentesque semper, est nec consequat viverra, sem augue tincidunt nisi, a posuere nisi sapien sed sapien. Nulla facilisi.</p>
+                                    </div>
+
+                                    <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding">
+                                        <h2 class="tm-text-title">Aliquam sem sem</h2>
+                                        <p class="tm-text">Proin sagittis mauris dolor, vel efficitur lectus dictum nec. Sed ultrices placerat arcu, id malesuada metus cursus suscipit. Donex quis consectetur ligula. Proin accumsan eros id nisi porttitor, a facilisis quam
+                                            cursus.</p>
+                                        <p class="tm-text">Donec vitae bibendum est, et ultrices urna. Curabitur ac bibendum augue, a convallis mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris consequat metus hendrerit, tincidunt
+                                            mi nec, euismod massa.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- .cd-full-width -->
+
+            </li>
+            <div class="copyrights">Collect from <a href="https://www.webmoban.net">企业网站模板</a></div>
+            <!-- Page 3 -->
+            <li>
+
+                <div class="cd-full-width">
+
+                    <div class="container-fluid js-tm-page-content" data-page-no="3">
+
+                        <div class="cd-bg-video-wrapper" data-video="video/sunset-cloud">
+                            <!-- video element will be loaded using jQuery -->
+                        </div>
+                        <!-- .cd-bg-video-wrapper -->
+
+                        <div class="tm-img-gallery-container">
+
+                            <div class="tm-img-gallery gallery-one">
+                                <!-- Gallery One pop up connected with JS code below -->
+
+                                <div class="tm-img-gallery-info-container">
+
+                                    <h2 class="tm-text-title tm-gallery-title">Gallery One</h2>
+                                    <p class="tm-text">Nulla efficitur, ligula et imperdiet volutpat, lacus tortor tempus massa, eget tempus quam nibh vel nulla. Maecenas purus sem, lobortis id odio in, ultrices scelerisque sapien.
+                                    </p>
+
+                                </div>
+
+                                <div class="grid-item">
+                                    <a href="img/tm-img-01.jpg">
+                                        <img src="img/tm-img-01-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-02.jpg">
+                                        <img src="img/tm-img-02-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-03.jpg">
+                                        <img src="img/tm-img-03-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-04.jpg">
+                                        <img src="img/tm-img-04-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-05.jpg">
+                                        <img src="img/tm-img-05-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-06.jpg">
+                                        <img src="img/tm-img-06-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-07.jpg">
+                                        <img src="img/tm-img-07-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-08.jpg">
+                                        <img src="img/tm-img-08-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- .tm-img-gallery-container -->
+
+                    </div>
+                    <!-- .container-fluid -->
+
+                </div>
+                <!-- .cd-full-width -->
+
+            </li>
+
+            <!-- Page 4 -->
+            <li>
+
+                <div class="cd-full-width">
+
+                    <div class="container-fluid js-tm-page-content" data-page-no="4">
+
+                        <div class="cd-bg-video-wrapper" data-video="video/night-light-blur">
+                            <!-- video element will be loaded using jQuery -->
+                        </div>
+                        <!-- .cd-bg-video-wrapper -->
+
+                        <div class="tm-img-gallery-container">
+
+                            <div class="tm-img-gallery gallery-two">
+                                <!-- Gallery Two pop up connected with JS code below -->
+
+                                <div class="tm-img-gallery-info-container">
+
+                                    <h2 class="tm-text-title tm-gallery-title"><span class="tm-white">Gallery Two</span></h2>
+                                    <p class="tm-text"><span class="tm-white">Nulla efficitur, ligula et imperdiet volutpat, lacus tortor tempus massa, eget tempus quam nibh vel nulla. Maecenas purus sem, lobortis id odio in, ultrices scelerisque sapien.</span>
+                                    </p>
+
+                                </div>
+
+                                <div class="grid-item">
+                                    <a href="img/tm-img-09.jpg">
+                                        <img src="img/tm-img-09-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-10.jpg">
+                                        <img src="img/tm-img-10-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-11.jpg">
+                                        <img src="img/tm-img-11-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-12.jpg">
+                                        <img src="img/tm-img-12-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-13.jpg">
+                                        <img src="img/tm-img-13-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-14.jpg">
+                                        <img src="img/tm-img-14-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-15.jpg">
+                                        <img src="img/tm-img-15-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                                <div class="grid-item">
+                                    <a href="img/tm-img-16.jpg">
+                                        <img src="img/tm-img-16-tn.jpg" alt="Image" class="img-fluid tm-img">
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- .tm-img-gallery-container -->
+
+                    </div>
+                    <!-- .container-fluid -->
+
+                </div>
+                <!-- .cd-full-width -->
+
+            </li>
+
+            <li>
+
+                <div class="cd-full-width">
+                    <div class="container-fluid js-tm-page-content" data-page-no="5">
+
+                        <div class="cd-bg-video-wrapper" data-video="video/padaut-bee">
+                            <!-- video element will be loaded using jQuery -->
+                        </div>
+                        <!-- .cd-bg-video-wrapper -->
+
+                        <div class="row">
+
+                            <div class="col-xs-12">
+                                <div class="tm-flex tm-3-col-container">
+
+                                    <div class="tm-3-col-textbox tm-bg-white-translucent">
+                                        <div class="text-xs-left tm-textbox tm-textbox-padding">
+
+                                            <h2 class="tm-text-title">Testimonial One</h2>
+                                            <p class="tm-text">Etiam vitae imperdiet magna. Vestibulum blandit vehicula metus, ac ornare eros elementum et. Pellentesque habitant morbi tristique senectus et ntus et malesuada fames ac turpis egestas.</p>
+
+                                            <p class="tm-text">Mauris lobortis lorem nulla, non tristique enim sollicitudin eu. Praesent tempus dapibus odio nec elementum.</p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="tm-3-col-textbox tm-bg-white-translucent">
+                                        <div class="text-xs-left tm-textbox tm-textbox-padding">
+
+                                            <h2 class="tm-text-title">Testimonial Two</h2>
+
+                                            <p class="tm-text">Curabitur sodales, est auctor congue vulputate, nisl tellus finibus nunc, vitae consectetur enim erat vitae quam.</p>
+
+                                            <p class="tm-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc vitae tempor turpis.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tm-3-col-textbox tm-bg-white-translucent">
+                                        <div class="text-xs-left tm-textbox tm-textbox-padding">
+
+                                            <h2 class="tm-text-title">Testimonial Three</h2>
+
+                                            <p class="tm-text">Mauris lobortis lorem nulla, non tristique enim sollicitudin eu. Praesent tempus dapibus odio nec elementum.</p>
+
+                                            <p class="tm-text">Sed elementum est quis tortor faucibus, et molestie nibh finibus. Mauris condimentum ex vestibulum fringilla consectetur.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </li>
+
+            <li>
+                <div class="cd-full-width">
+
+                    <div class="container-fluid js-tm-page-content" data-page-no="6">
+
+                        <div class="cd-bg-video-wrapper" data-video="video/sunset-loop">
+                            <!-- video element will be loaded using jQuery -->
+                        </div>
+                        <!-- .cd-bg-video-wrapper -->
+
+                        <div class="tm-contact-page">
+
+                            <div class="row">
+
+                                <div class="col-xs-12">
+
+                                    <div class="tm-flex tm-contact-container">
+
+                                        <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact">
+                                            <p class="tm-text">Praesent tempus dapibus odio nec elementum. Sed elementum est quis tortor faucibus, et molestie nibh finibus. Mauris condimentum ex vestibulum fringilla consectetur.</p>
+
+                                            <!-- contact form -->
+                                            <form action="index.html" method="post" class="tm-contact-form">
+
+                                                <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-left">
+                                                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required/>
+                                                </div>
+
+                                                <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 tm-form-group-right">
+                                                    <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Subject" required/>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <textarea id="contact_message" name="contact_message" class="form-control" rows="5" placeholder="Your message" required></textarea>
+                                                </div>
+
+                                                <button type="submit" class="pull-xs-right tm-submit-btn">Send</button>
+
+                                            </form>
+                                        </div>
+
+                                        <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-2-col-textbox-2 tm-textbox-padding tm-textbox-padding-contact">
+                                            <h2 class="tm-contact-info">123 New Street 11000, San Francisco, CA</h2>
+                                            <!-- google map goes here -->
+                                            <div id="">map</div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- .cd-full-width -->
+            </li>
+        </ul>
+        <!-- .cd-hero-slider -->
+
+        <footer class="tm-footer">
+
+            <div class="tm-social-icons-container text-xs-center">
+                <a href="#" class="tm-social-link"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="tm-social-link"><i class="fa fa-google-plus"></i></a>
+                <a href="#" class="tm-social-link"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="tm-social-link"><i class="fa fa-behance"></i></a>
+                <a href="#" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+            <p class="tm-copyright-text">Copyright &copy; 2016 Your Company - More Templates <a href="https://www.webmoban.net" target="_blank" title="网站模板">网站模板</a> - Collect from <a href="https://www.webmoban.net" title="网页模板" target="_blank">网页模板</a></p>
+
+        </footer>
+
+    </div>
+    <!-- .cd-hero -->
+
+
+    <!-- Preloader, https://ihatetomatoes.net/create-custom-preloading-screen/ -->
+    <div id="loader-wrapper">
+
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+
+    <!-- load JS files -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- jQuery (https://jquery.com/download/) -->
+    <script src="js/tether.min.js"></script>
+    <!-- Tether for Bootstrap (http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h) -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
+    <script src="js/hero-slider-main.js"></script>
+    <!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
+    <script src="js/masonry.pkgd.min.js"></script>
+    <!-- Masonry (http://masonry.desandro.com/) -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
 
     <script>
-    (function(){
-        var canvas = $('#canvas');
+        function adjustHeightOfPage(pageNo) {
 
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;
-        }
+            var offset = 80;
+            var pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .js-tm-page-content").height();
 
-        var width = canvas.width();
-        var height = canvas.height();
-        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
+            if ($(window).width() >= 992) {
+                offset = 120;
+            } else if ($(window).width() < 480) {
+                offset = 40;
+            }
 
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
+            // Get the page height
+            var totalPageHeight = 15 + $('.cd-slider-nav').height() +
+                pageContentHeight + offset +
+                $('.tm-footer').height();
+
+            // Adjust layout based on page height and window height
+            if (totalPageHeight > $(window).height()) {
+                $('.cd-hero-slider').addClass('small-screen');
+                $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", totalPageHeight + "px");
+            } else {
+                $('.cd-hero-slider').removeClass('small-screen');
+                $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", "100%");
             }
         }
 
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
+        /*
+            Everything is loaded including images.
+        */
+        $(window).load(function() {
 
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
+            adjustHeightOfPage(1); // Adjust page height
+
+            /* Gallery One pop up
+            -----------------------------------------*/
+            $('.gallery-one').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+
+            /* Gallery Two pop up
+                -----------------------------------------*/
+            $('.gallery-two').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+
+            /* Collapse menu after click 
+            -----------------------------------------*/
+            $('#tmNavbar a').click(function() {
+                $('#tmNavbar').collapse('hide');
+
+                adjustHeightOfPage($(this).data("no")); // Adjust page height       
+            });
+
+            /* Browser resized 
+            -----------------------------------------*/
+            $(window).resize(function() {
+                var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
+
+                // wait 3 seconds
+                setTimeout(function() {
+                    adjustHeightOfPage(currentPageNo);
+                }, 1000);
+
+            });
+
+            // Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
+            $('body').addClass('loaded');
+
         });
-
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
-
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
-
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-                tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
-
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
-
-            // 会有闪烁不得意这样做, (＞﹏＜)
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
-
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
-
-        var textAnimate = eval(Jscex.compile("async", function () {
-            var together = new Date();
-            together.setFullYear(2017, 5, 20);
-            together.setHours(20);
-            together.setMinutes(20);
-            together.setSeconds(0);
-            together.setMilliseconds(0);
-
-            $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
-
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
     </script>
 
+</body>
 
-
-</body></html>
+</html>
