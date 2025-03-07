@@ -11,7 +11,7 @@ ui.helpTitle: ヘルプ
 ui.helpContent: 各月の初めに選択を行ってください。すべての結果はランダム数生成器によって決定されます。あまり真剣に受け止めないでください。**ランダム生成器（RNG）は時に過酷です。**
 ui.seedButton: シード
 ui.seedTitle: シード
-ui.seedContent: "現在のタイムラインのシードは **{{@seed}}** です。共有リンク: **``{{@seedUrl}}``**"
+ui.seedContent: "現在のタイムラインのシードは **{{seed}}** です。共有リンク: **``{{seedUrl}}``**"
 ui.hopeMeter: 希望 {{player.hope}}/100
 ui.timeMeter: 年 {{year}} 月 {{month}}
 
