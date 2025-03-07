@@ -33,28 +33,17 @@ statusList:
   title: ui.status
 footer:
   preamble:
-buttons:
-    # 日语版链接 (你的翻译版本)
-    - text: "(Japanese Version)Github"
-      url: https://dgy924143558.github.io/phd-game/dist/index.html
-
-    # 原版链接 (原始项目)
-    - text: "(Original Version)Github"
-      url: https://morriswmz.github.io/phd-game/
-
-    # 帮助按钮 (保持不变)
+  buttons:
+    - text: ui.github
+      url: https://github.com/morriswmz/phd-game
     - text: ui.helpButton
       messageTitle: ui.helpTitle
       message: ui.helpContent
       confirmText: ui.ok
-
-    # 隐私声明按钮 (保持不变)
     - text: ui.privacyNoticeButton
       messageTitle: ui.privacyNoticeTitle
       message: ui.privacyNoticeContent
       confirmText: ui.ok
-
-    # 随机种子按钮 (保持不变)
     - text: ui.seedButton
       messageTitle: ui.seedTitle
       message: ui.seedContent
