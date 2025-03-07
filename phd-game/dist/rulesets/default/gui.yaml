@@ -40,6 +40,10 @@ footer:
       messageTitle: ui.helpTitle
       message: ui.helpContent
       confirmText: ui.ok
+    - text: 
+      messageTitle: 
+      message: 
+      confirmText: 
     - text: ui.seedButton
       messageTitle: ui.seedTitle
       message: ui.seedContent

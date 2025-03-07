@@ -5,9 +5,7 @@ ui.status: "ステータス:"
 ui.github: GitHub
 ui.privacyNoticeButton: プライバシー通知
 ui.privacyNoticeTitle: プライバシー通知
-ui.privacyNoticeContent: <p>このゲームは <a href="https://github.com/morriswmz/phd-game" target="_blank">
-オリジナルのPHD Game (by Mianzhi Wang)</a> を日本語化したものです。</p>
-<p>本バージョンではGoogle Analytics（クッキーを使用）によるデータ収集を行っていません。</p>
+ui.privacyNoticeContent: 
 ui.helpTitle: ヘルプ
 ui.helpContent: 各月の初めに選択を行ってください。すべての結果はランダム数生成器によって決定されます。あまり真剣に受け止めないでください。**ランダム生成器（RNG）は時に過酷です。**
 ui.seedButton: シード
