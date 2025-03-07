@@ -36,6 +36,8 @@ footer:
   buttons:
     - text: ui.github
       url: https://github.com/morriswmz/phd-game
+    - text: ui.githubJP
+      url: https://github.com/dgy924143558/dgy924143558.github.io/tree/homepage/phd-game
     - text: ui.helpButton
       messageTitle: ui.helpTitle
       message: ui.helpContent

@@ -2,7 +2,8 @@
 ui.ok: OK
 ui.items: "アイテム:"
 ui.status: "ステータス:"
-ui.github: GitHub
+ui.github: GitHub(En)
+ui.githubJP: GitHub(Ja)
 ui.privacyNoticeButton: プライバシー通知
 ui.privacyNoticeTitle: プライバシー通知
 ui.privacyNoticeContent:   このウェブページは GitHub Pages 上にホストされており、クッキーや追跡ツールを使用していません。    本ゲームは、<a href="https://github.com/morriswmz/phd-game" target="_blank">    オリジナルの PHD Game (by Mianzhi Wang)</a> を日本語化したバージョンです。
