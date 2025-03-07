@@ -1,0 +1,208 @@
+---
+ui.ok: OK
+ui.items: "アイテム:"
+ui.status: "ステータス:"
+ui.github: GitHub
+ui.privacyNoticeButton: プライバシー通知
+ui.privacyNoticeTitle: プライバシー通知
+ui.privacyNoticeContent: このウェブページは research.wmz.ninja ドメインにホストされており、Google Analytics（クッキーを使用）を通じて匿名のデータを収集しています。クッキーを無効にするか、「Do Not Track（追跡拒否）」を有効にすることができます。
+ui.helpButton: ヘルプ
+ui.helpTitle: ヘルプ
+ui.helpContent: 各月の初めに選択を行ってください。すべての結果はランダム数生成器によって決定されます。あまり真剣に受け止めないでください。**ランダム生成器（RNG）は時に過酷です。**
+ui.seedButton: シード
+ui.seedTitle: シード
+ui.seedContent: "現在のタイムラインのシードは **{{@seed}}** です。共有リンク: **``{{@seedUrl}}``**"
+ui.hopeMeter: 希望 {{player.hope}}/100
+ui.timeMeter: 年 {{year}} 月 {{month}}
+
+item.idea: アイデア
+item.idea.description: 開発可能な簡単なアイデア。
+item.preliminaryResult: 予備結果
+item.preliminaryResult.description: 予備的な成果。主要な結果に発展する可能性があります。
+item.majorResult: 主要な結果
+item.majorResult.description: 重要な成果です。{{rule.figuresRequired}} 個の図があれば、新しい論文を執筆できます。
+item.figure: 図
+item.figure.description: 様々な実験の成果をまとめた見栄えの良い図です。{{rule.figuresRequired}} 個の図と主要な結果があれば、論文を執筆できます。
+item.submittedPaper: 提出済み論文
+item.submittedPaper.description: 査読者の判断を待つ提出済みの論文。
+item.resubmittedPaper: 再提出された論文
+item.resubmittedPaper.description: 再度査読者の判断を待つ再提出された論文。
+item.paper: 論文
+item.paper.description: 掲載された論文！
+item.rejectedPaper: 却下された論文
+item.rejectedPaper.description: 書き直して再提出を待つ論文。
+item.conferencePaper: 学会論文
+item.conferencePaper.description: 公開された学会論文。他の研究者にアイデアを盗まれるリスクを減らします。
+item.submittedConfPaper: 提出済み学会論文
+item.submittedConfPaper.description: 査読者の判断を待つ提出済みの学会論文。
+
+status.firstYear: 1年目のワクワク感
+status.firstYear.description: "**毎月 +1 希望**"
+status.brokenEquipment: 壊れた機器
+status.brokenEquipment.description: 今月は実験ができません。
+status.callForPapers: 論文募集
+status.callForPapers.description: 予備結果があれば学会論文を提出できます。
+status.upgradedEquipment: 機器のアップグレード
+status.upgradedEquipment.description: 良い図が得られる可能性が上がります。
+status.cloudStorage: クラウドストレージ
+status.cloudStorage.description: ローカルデータを自動的にクラウドに同期します。実験データが失われるリスクが大幅に減少します。
+status.exhaustion: 疲労
+status.exhaustion.description: "**毎月 -5 希望** そろそろ休憩を取る時です。"
+status.lateYearAnxiety: "年末の不安"
+status.lateYearAnxiety.description: "**毎月 -1 希望** 卒業できるかどうか心配し始めました。"
+status.unhappyAdvisor: 不機嫌な指導教官
+status.unhappyAdvisor.description: "**毎月 -5 希望** 指導教官はあなたのパフォーマンスに満足していません。"
+
+# qualify
+message.qualifyNotice: "学科通知: 全ての博士課程の学生は、**12月の資格試験**に合格する必要があります。"
+message.prepareQualify: 資格試験の準備をする。
+message.qualifyLevelUp: 資格試験に合格する自信が少し増しました。
+message.qualifyLevelMax: 資格試験に**非常に自信**を持っています。
+message.qualifyPassed: 資格試験に**合格しました**。
+message.qualifyFailed: 資格試験に**不合格**となりました。
+
+# burn out
+message.exhaustion: 長期間研究に没頭し続けた結果、疲れを感じ、集中力を保つのが難しくなりました。
+message.exhaustionBreak: 指導教官は、最近あなたがとても疲れていることに気づき、ワークライフバランスを保つ方法についてのメールを送ってくれました。
+message.takeBreak: 指導教官に休みをお願いする。
+message.recoveredAfterBreak: 指導教官はあなたの休みの申し出を承認しました。忙しい研究から離れ、心がリフレッシュされ、**元気を取り戻しました**。
+message.noBreak: 大丈夫です。
+message.exhaustionIgnored: 研究を続けなければならないと感じました。
+message.exhaustionBadMonth: 研究に集中するのが難しく、頭が詰まっているように感じ、気分転換が必要です。
+message.exhaustionNoProgress: 無理に集中しようとしましたが、あまり効果はありませんでした。今月はあまり良い進展が得られませんでした。
+# late year anxiety
+message.lateYearAnxiety: 3年が経過しました。多くの卒業を見届けてきましたが、自分が無事に卒業できるかどうか心配になってきました。
+# funding
+message.fundingRises: "学術ニュース: 政府の研究資金が増加する見通しです。「科学研究への継続的な投資が、より明るい未来への道を切り開くでしょう」と、政府関係者の一人が述べました。"
+message.fundingFalls: "学術ニュース: 財政赤字の拡大により、政府は今年度の支出を削減する見込みです。研究資金にも影響が出る可能性があります。"
+message.moreFunding: 指導教官が新しい研究助成金のPI（責任者）になりました。研究室の皆はとても興奮しました。
+message.lessFunding: しばらくの間、指導教官は新しい資金を得られていませんでした。研究室の皆は少し不安を感じました。
+message.lostFunding: 指導教官のプロジェクトの一つの資金が**削減されました**。研究室の皆は心配しました。
+# unhappy advisor
+message.unhappyAdvisor: 指導教官はあなたの最近のパフォーマンスに満足していないようです。「研究は難しい課題です。もっと努力してくれることを期待しています。」
+message.advisorHappyAgain: 指導教官はあなたの最近のパフォーマンスにかなり満足しているようです。
+# main events
+message.beginning: おめでとうございます。あなたは新しい博士課程の学生として**合格しました**。オファーを受け入れますか？
+message.acceptOffer: オファーを受け入れる。
+message.acceptedOffer: あなたはオファーを受け入れ、指導教官を見つけました。学位を取得するためには、少なくとも**{{rule.papersRequired}} 本のジャーナル論文**を発表する必要があります。
+message.declineOffer: オファーを辞退する。
+message.declinedOffer: あなたは考えを変えて、**オファーを辞退しました**。このタイムラインでは、これがより良い選択かもしれません。
+message.newMonth: 新しい月が始まりました。やるべきことを確認しましょう。
+message.readPapers: 論文を読む。
+message.gainNewIdea1: 多くの論文を掘り下げた後、突然**新しいアイデア**を得ました。
+message.gainNewIdea2: 長時間頭を悩ませた結果、**新しいアイデア**を思いつきました。
+message.workOnIdea: アイデアを開発する。
+message.oldIdea1: 新しいアイデアについて指導教官と話した後、古い論文を確認するように勧められました。調べてみると、すでに同じことが実施されていました。
+message.oldIdea2: 指導教官は、あなたのアイデアがあまり面白くないと思い、別のアイデアを考えるように提案しました。
+message.oldIdea3: 指導教官は、あなたのアイデアが十分に新規性がないと考え、もっと論文を読むように勧めました。
+message.oldIdea4: たくさんのアイデアを思いつきましたが、さらに調べてみると、すでにそれらは実現されていることがわかりました。
+message.noIdea1: ウェブブラウザでタブを開きすぎて、突然**クラッシュ**しました。読んでいた論文の情報を見失いました。
+message.gainPrelimResult: あなたのアイデアがうまくいきました！**予備結果**を取得しました。
+message.ideaNotWorking: このアイデアはうまくいかないことが判明しました。別のアイデアを試してみる時です。
+message.workOnPrelimResult: 予備結果をさらに発展させる。
+message.gainMajorResult: あなたは**主要な結果**を得ました。
+message.noMajorResult1: 興味深い結果が得られそうですが、欠けている部分を見つけるには、もう少し時間が必要です。
+message.noMajorResult2: 指導教官があなたの導出に問題を指摘しました。アプローチを見直す必要があります。
+message.workOnFigure: 主要な結果をサポートするための実験を行う。
+message.gainFigure: 実験は非常に順調でした。見事な**図**を得ました。
+message.noFigure1: 現在の設定では興味深い結果が得られませんでした。もっと実験を行う必要がありそうです。
+message.noFigure2: プログラムがメモリ不足でクラッシュしました。実験をやり直す必要があります。
+message.noFigure3: シミュレーションに予想以上の時間がかかり、結果はまだ利用可能ではありません。
+message.noFigure4: 実験の設定中に技術的な問題が発生しました。解決策を見つけるのに時間がかかり、実験を完了するにはさらに時間が必要です。
+message.lostData: データを処理中にコンピュータがクラッシュしました。実験をやり直す必要がありそうです。
+message.lostDataRecovered: データを処理中にコンピュータがクラッシュしましたが、幸いにもクラウドストレージから**回復**でき、見事な**図**を取得しました。
+message.wrongFigure: 矛盾する結果を得ました。何かが間違っており、確認するのにもっと時間が必要です。
+message.workOnPaper: 論文のドラフトを作成する。
+message.draftPaperComplete: 論文のドラフトを完成させ、提出しました！
+message.draftPaperIncomplete1: 指導教官は先月、忙しすぎてドラフトを確認することができませんでした。
+message.draftPaperIncomplete2: 努力したにもかかわらず、論文のドラフトを完成できませんでした。背景部分にもっと詳細を追加する必要があります。
+message.draftPaperIncomplete3: 努力したにもかかわらず、論文のドラフトを完成できませんでした。結果のセクションにもっと詳細を追加する必要があります。
+message.draftPaperIncomplete4: LaTeXで図の配置に時間をかけすぎて、論文のドラフトを完成できませんでした。
+message.draftPaperIncomplete5: 努力したにもかかわらず、論文のドラフトを完成できませんでした。まだ1〜2ページ書く必要があります。
+message.draftPaperIncomplete6: 指導教官が最新のドラフトを確認し、要旨をより良い形に書き直すよう提案しました。
+message.draftPaperIncomplete7: 指導教官が最新のドラフトを確認し、図にいくつかの問題を指摘しました。修正するのにもっと時間が必要です。
+message.paperAccepted: "受信トレイ: あなたの原稿が**掲載承認**されました。おめでとうございます！"
+message.paperRejected1: "受信トレイ: レビューアのコメントに基づき、残念ながらあなたの原稿は**不採択**となりました。一人のレビューアは、提案された手法が十分に新規性がないと考えました。"
+message.paperRejected2: "受信トレイ: レビューアのコメントに基づき、残念ながらあなたの原稿は**不採択**となりました。一人のレビューアは、主な結論の導出に問題を指摘しました。"
+message.paperRejected3: "受信トレイ: レビューアのコメントに基づき、残念ながらあなたの原稿は**不採択**となりました。一人のレビューアは、図が説得力に欠けているとコメントしました。"
+message.paperRejected4: "受信トレイ: レビューアのコメントに基づき、残念ながらあなたの原稿は**不採択**となりました。一人のレビューアは、最新の手法との比較がないと指摘しました。"
+message.revisePaper: 却下された論文を修正して再提出する。
+message.revisionComplete: レビューアのコメントに従い、却下された論文を書き直して再提出しました。
+message.resubmittedPaperAccepted: "受信トレイ: あなたの再提出された原稿が**掲載承認**されました。おめでとうございます！"
+message.resubmittedPaperRejected1: "受信トレイ: 残念ながら、再提出された原稿は**不採択**となりました。"
+message.slackOff: サボる。
+message.caughtSlackOff1: 指導教官があなたのサボりを見つけ、複数のメールでタスクを思い出させました。
+message.caughtSlackOff2: 指導教官が研究室に電話をかけ、あなたがいないことを知りました。研究の進捗についてのメールを受け取りました。
+message.slackOffSuccess: 少しリラックスして、希望を取り戻しました。
+message.lostAllHope: すべての希望を失い、**博士課程を辞めました**。
+message.overdue: 期限内に博士号を取得することに**失敗しました**。
+message.workOnThesis: 論文を書く。
+message.graduated: おめでとうございます！論文を完成させ、博士号の審査に合格しました。ついに**博士号を取得しました**。あなたは自分自身を誇りに思うべきです！
+# progress loss related event
+message.ideaDoneByOthers: あなたのアイデアの一つが、最近公開された論文に掲載されていることに気付きました。このアイデアでの作業は続けられません。
+message.prelimDoneByOthers: あなたの予備結果の一つが、最近公開された論文に掲載されていることに気付きました。この結果での作業は続けられません。
+message.goodIdea: 指導教官はあなたの新しいアイデアが興味深いと感じています。あなたは励まされました。
+message.figureInvalid: 最近の実験結果を確認したところ、誤ったパラメーターを使用していたことに気付きました。その結果、図の一つが無効になりました。この実験をやり直さなければなりません。
+# equipment event
+message.equipmentBroken: 新入生によって研究室の機器が壊れました。
+message.doNothing: 何もしない。
+message.cannotUseEquipment: 来月は機器を使用して結果を検証することができません。それは辛いです。
+message.fixEquipment: 修理を試みる。
+message.contactEquipmentSupport: 技術サポートに連絡する！
+message.equipmentFixed: 修理が成功しました！エンジニアリングの魔法に感謝！
+message.equipmentNotFixed: 修理を試みましたが、まだ動作しません。
+message.equipmentFixedByTechSupport: 技術者が到着し、研究室の機器を修理しました。
+message.equipmentNotFixedByTechSupport: 技術者が到着して機器の修理を試みましたが、問題は予想以上に複雑で、修理にはもっと時間が必要だと言われました。
+message.newEquipment: 指導教官が**古い研究室の機器をアップグレード**しました。研究室の皆は大変興奮しました。
+message.cloudStorage: "大学ニュース: すべての学生と教職員に無料のクラウドストレージが提供されます。データはクラウド上で安全に保存されます。"
+# conference event
+message.callForPapers: 偉大な国際学会「PhDシミュレーション国際会議（ICPS）」が**論文募集**を開始しました。提出期間は今後**6か月間**です。予備結果があれば、論文を提出することができます。
+message.workOnConf: 学会論文の作成に取り組む。
+message.finishedConfPaper: 学会論文を完成させ、提出しました！
+message.confPaperRejected: あなたのICPS{{year}}への投稿は**不採択**となりました。レビューアはあなたの結果の重要性に納得していませんでした。それでも、これらの結果を引き続き研究することは可能です。
+message.confPaperAccepted1: "受信トレイ: おめでとうございます！あなたの素晴らしい研究がICPS{{year}}でポスター論文として**採択**されました。"
+message.confPaperAccepted2: "受信トレイ: おめでとうございます！あなたの素晴らしい研究がICPS{{year}}で口頭発表論文として**採択**されました。"
+message.attendConf: ICPS{{year}}の会議センターに到着し、発表を無事に終えました。次の日のスケジュールを確認しましょう。
+message.skipConfSession: 街を観光する。
+message.confNiceTour1: 街は美しく、通りを散策して心がリフレッシュされました。
+message.confNiceTour2: 素敵なレストランを見つけ、美味しい料理を楽しみました。
+message.skipConfSessionFail1: 街を歩き回っていると、指導教官とばったり会ってしまいました。とても気まずかったです。
+message.skipConfSessionFail2: 指導教官は会議センターであなたに会おうとしましたが、見つけることができませんでした。
+message.attendConfSession: 興味深いセッションに参加する。
+message.confNewIdea: いくつかの興味深い講演に参加し、他の研究者と議論する中で**新しいアイデア**を思いつきました。
+message.confNoNewIdea: 講演は面白く、料理もとても美味しかったです。
+# advisor comments
+message.qualifyReminder: 指導教官は、あなたが資格試験の準備が十分でないと感じ、もっと注意を払うように促しました。
+message.tooManyIdeas: 指導教官からメールが届き、「アイデアを具体的な成果に結びつけることにもっと集中するべきだ」と伝えられました。
+message.notEnoughPapers: 指導教官からメールが届き、あなたの進捗状況について確認され、もっと多くの論文が見たいという不安が示されました。
+message.rejectedPaperAdvisor: 指導教官から最近の論文が却下されたことについてのメールが届きました。「レビューアのコメントに落胆しないでください。気持ちを切り替えて、修正して再提出しましょう。」
+# misc events
+message.paperCited: あなたの最近の論文がより多く引用されました。あなたは認められたと感じました。
+message.seminar1: 今月、あなたは研究に関連するセミナーに参加しました。講演者のスライドはとても刺激的で、**新しいアイデア**を得ました。
+message.seminar2: 今月、あなたは研究に関連するセミナーに参加しました。Q&Aセッションが非常に刺激的で、**新しいアイデア**を得ました。
+message.seminar3: 今週のセミナーでは、著名な講師が刺激的な講演を行いました。そのおかげで、突然**新しいアイデア**が浮かびました。
+message.showerIdea: シャワーを浴びている最中に、欠けていた部分を見つけました。予備結果の一つを**主要な結果**に発展させました。
+message.randomHope1: 今月、街の博物館で特別展が開催されていました。訪れてみると、素晴らしい体験となり、気持ちが楽になりました。
+message.randomHope2: キャンパスの近くでオープンコンサートが開かれていました。音楽を楽しみ、気分がすっきりしました。
+message.randomHope3: 研究室の仲間とパーティーをしました。料理は美味しく、気持ちが和らぎました。
+message.randomHope4: 住まいの近くに新しいレストランがオープンしました。訪れてみると、料理がとても美味しく、気分が良くなりました。
+message.randomHope5: ショッピングカートに入れていた商品がセールになっていました。すぐに購入し、とても気分が良くなりました。
+# confirms
+message.oops: おっと。
+message.great: すごい！
+message.cool: いいね！
+message.ok: OK
+message.gotit: 分かりました。
+message.workingOnIt: 進行中です。
+message.excited: ワクワクします。
+message.finally: ついに！
+message.hope: そうだといいですね。
+message.encouraging: それは励みになります。
+message.shame: 残念ですね。
+message.sucks: それは辛いですね。
+message.party: お祝いのパーティーをしましょう！
+message.soundsInteresting: 面白そうですね。
+message.unfortunate: それは残念です。
+message.restart: 時間を遡って、もう一度始めましょう。
+message.restartNewTimeline: 別のタイムラインで再スタートしましょう。
+message.hopeAccepted: 今回は受理されることを願っています。
