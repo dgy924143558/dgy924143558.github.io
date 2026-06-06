@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPE Japan | パワーエレクトロニクス・ソリューション</title>
+  <meta property="og:title" content="UPE Japan" />
+  <meta property="og:description" content="パワーエレクトロニクス分野のトップパートナー。台湾UPEグループの日本法人。" />
+  <meta property="og:type" content="website" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #003f7f;
+      --accent: #e8a000;
+      --light: #f4f7fb;
+      --text: #1a1a2e;
+      --white: #ffffff;
+    }
+    body { font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; color: var(--text); background: var(--white); }
+
+    /* NAV */
+    nav {
+      background: var(--primary);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px; position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo .logo-mark {
+      width: 40px; height: 40px; background: var(--accent);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 18px; color: var(--primary); letter-spacing: -1px;
+    }
+    .nav-logo span { color: var(--white); font-size: 20px; font-weight: 700; letter-spacing: 2px; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      background-color: #001428;
+      background-image:
+        linear-gradient(to bottom, rgba(0,15,35,0.75) 0%, rgba(0,28,60,0.70) 100%),
+        url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--white); text-align: center;
+      padding: 110px 5% 90px;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-block; background: var(--accent); color: var(--primary);
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      padding: 4px 16px; border-radius: 20px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 6vw, 54px); font-weight: 900; letter-spacing: 4px; line-height: 1.25;
+      color: var(--accent); text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+    }
+    .hero h1 span { color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+    .hero p {
+      margin: 22px auto 0; max-width: 620px; font-size: 16px; line-height: 1.85;
+      color: #e8f0ff; text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
+    .hero-btns { margin-top: 44px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent); color: var(--primary);
+      padding: 14px 36px; border-radius: 4px; font-weight: 700; font-size: 15px;
+      text-decoration: none; transition: opacity .2s; box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.9); color: var(--white);
+      padding: 12px 36px; border-radius: 4px; font-weight: 700; font-size: 15px;
+      text-decoration: none; transition: background .2s; background: rgba(255,255,255,0.08);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.18); }
+
+    /* SECTION */
+    section { padding: 72px 5%; }
+    section:nth-child(even):not(.hero) { background: var(--light); }
+    .section-label { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+    .section-title { font-size: clamp(22px, 4vw, 34px); font-weight: 900; color: var(--primary); margin-bottom: 16px; }
+    .section-desc { color: #555; font-size: 15px; line-height: 1.9; max-width: 680px; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .about-text { }
+    .about-visual {
+      background: linear-gradient(135deg, var(--primary), #005ca8);
+      border-radius: 12px; padding: 40px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .stat { color: var(--white); }
+    .stat .num { font-size: 40px; font-weight: 900; color: var(--accent); }
+    .stat .label { font-size: 13px; opacity: 0.8; margin-top: 2px; }
+    .divider { border-top: 1px solid rgba(255,255,255,0.15); }
+
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 1100px; margin: 40px auto 0; }
+    .service-card {
+      background: var(--white); border-radius: 10px; padding: 32px 24px;
+      box-shadow: 0 4px 20px rgba(0,63,127,0.08);
+      border-top: 4px solid var(--primary); transition: transform .2s, box-shadow .2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,63,127,0.14); }
+    .service-img {
+      width: 100%; height: 160px; object-fit: cover;
+      border-radius: 6px; margin-bottom: 18px;
+      display: block;
+    }
+    .service-card h3 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+    .service-card p { font-size: 14px; color: #666; line-height: 1.75; }
+
+    /* ADVISOR */
+    .advisor-wrap { max-width: 1000px; margin: 48px auto 0; }
+    .advisor-card {
+      background: var(--white); border-radius: 16px; overflow: hidden;
+      box-shadow: 0 12px 60px rgba(0,63,127,0.18);
+      display: grid; grid-template-columns: 340px 1fr;
+    }
+    .advisor-photo {
+      background: linear-gradient(160deg, #002a5e, #004ea0);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 52px 32px; text-align: center;
+    }
+    .advisor-avatar {
+      width: 200px; height: 200px; border-radius: 50%;
+      border: 5px solid var(--accent);
+      overflow: hidden; margin-bottom: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .advisor-avatar img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    }
+    .advisor-photo .name-ja { color: var(--white); font-size: 26px; font-weight: 700; }
+    .advisor-photo .name-en { color: rgba(255,255,255,0.65); font-size: 14px; margin-top: 6px; }
+    .advisor-photo .role-badge {
+      margin-top: 16px; background: var(--accent); color: var(--primary);
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      padding: 6px 18px; border-radius: 20px;
+    }
+    .advisor-info { padding: 48px 40px; }
+    .advisor-info h3 { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 14px; }
+    .advisor-info p { font-size: 15px; color: #444; line-height: 1.9; margin-bottom: 20px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--light); border: 1px solid #d0dce8;
+      color: var(--primary); font-size: 12px; font-weight: 600;
+      padding: 4px 12px; border-radius: 20px;
+    }
+    .affil { margin-top: 20px; font-size: 13px; color: #888; }
+    .affil strong { color: var(--primary); }
+
+    /* COMPANY */
+    .company-table { width: 100%; max-width: 700px; margin: 32px auto 0; border-collapse: collapse; }
+    .company-table tr { border-bottom: 1px solid #e0e8f0; }
+    .company-table td { padding: 14px 0; font-size: 15px; vertical-align: top; }
+    .company-table td:first-child { width: 160px; color: var(--primary); font-weight: 700; }
+    .company-table td:last-child { color: #444; }
+
+    /* CONTACT */
+    .contact-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .contact-inner .section-title { margin-bottom: 24px; }
+    .contact-box {
+      background: var(--white); border-radius: 12px; padding: 40px;
+      box-shadow: 0 4px 24px rgba(0,63,127,0.1);
+    }
+    .contact-box p { font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 28px; }
+    .contact-link {
+      display: inline-block; background: var(--primary); color: var(--white);
+      padding: 14px 40px; border-radius: 4px; font-weight: 700; text-decoration: none;
+      font-size: 15px; transition: background .2s;
+    }
+    .contact-link:hover { background: #005ca8; }
+
+    /* FOOTER */
+    footer {
+      background: #001020; color: rgba(255,255,255,0.55);
+      text-align: center; padding: 32px 5%; font-size: 13px; line-height: 1.9;
+    }
+    footer strong { color: var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .advisor-card { grid-template-columns: 1fr; }
+      .advisor-photo { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-mark">UPE</div>
+    <span>UPE Japan</span>
+  </div>
+  <div class="nav-links">
+    <a href="#about">会社概要</a>
+    <a href="#services">事業内容</a>
+    <a href="#advisor">顧問</a>
+    <a href="#company">会社情報</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">UPE Power Group — Japan</div>
+  <h1>次世代<span>パワー</span>技術で<br>日本の産業を変える</h1>
+  <p>台湾発のパワーエレクトロニクスリーダー「UPE Power」の日本拠点として、先進的な電力変換・電力制御ソリューションを日本市場へお届けします。</p>
+  <div class="hero-btns">
+    <a href="#services" class="btn-primary">事業内容を見る</a>
+    <a href="#contact" class="btn-outline">お問い合わせ</a>
+  </div>
+</section>
+
+<!-- ADVISOR (prominent, right after hero) -->
+<section id="advisor" style="background:var(--light)">
+  <div style="max-width:1100px;margin:0 auto;text-align:center">
+    <div class="section-label">Advisory Board</div>
+    <h2 class="section-title">顧問のご紹介</h2>
+    <p class="section-desc" style="margin:0 auto">業界を牽引するトップ研究者を顧問に迎え、技術の最先端を追求します。</p>
+    <div class="advisor-wrap">
+      <div class="advisor-card">
+        <div class="advisor-photo">
+          <div class="advisor-avatar"><img src="/upe-japan/Omori.jpg" alt="大森 英樹 教授" /></div>
+          <div class="name-ja">大森 英樹</div>
+          <div class="name-en">Prof. Hideki Omori</div>
+          <div class="role-badge">UPE Japan 顧問</div>
+        </div>
+        <div class="advisor-info">
+          <h3>PROFILE</h3>
+          <p>
+            長崎総合科学大学 先進技術創生研究所 客員教授。神戸大学大学院海事科学研究科、大阪工業大学工学部などを経て現職。<br><br>
+            パワーエレクトロニクス・パワー半導体・ワイヤレス電力伝送・共振型コンバータ・電気自動車・SiC半導体・V2Hシステムを主な研究領域とし、95件超の論文・特許を有する国際的権威。<br><br>
+            UPE Japanでは技術顧問として、次世代電力変換技術の研究開発および産学連携プロジェクトをリードします。
+          </p>
+          <div class="tag-list">
+            <span class="tag">パワーエレクトロニクス</span>
+            <span class="tag">ワイヤレス電力伝送</span>
+            <span class="tag">SiC半導体</span>
+            <span class="tag">EV充電</span>
+            <span class="tag">V2Hシステム</span>
+            <span class="tag">共振型コンバータ</span>
+            <span class="tag">双方向電力伝送</span>
+          </div>
+          <div class="affil">
+            <strong>現所属：</strong>長崎総合科学大学 先進技術創生研究所 客員教授（2026年）
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">UPE Japanについて</h2>
+      <p class="section-desc">
+        UPE Japan は、台湾・UPE Power グループの日本拠点です。<br><br>
+        UPE Power は 30 年以上にわたりパワーエレクトロニクス分野に特化し、電力変換装置・無停電電源装置（UPS）・再生可能エネルギー向けインバータなど幅広い製品を世界市場に供給してきました。<br><br>
+        UPE Japan では、日本国内の顧客へ台湾本社の先進技術をダイレクトに提供するとともに、日本の研究機関・大学との連携を通じて次世代技術の研究開発にも積極的に取り組んでいます。
+      </p>
+    </div>
+    <div class="about-visual">
+      <div class="stat">
+        <div class="num">30+</div>
+        <div class="label">年の業界実績（グループ）</div>
+      </div>
+      <div class="divider"></div>
+      <div class="stat">
+        <div class="num">95+</div>
+        <div class="label">パワーエレクトロニクス関連特許・論文</div>
+      </div>
+      <div class="divider"></div>
+      <div class="stat">
+        <div class="num">Global</div>
+        <div class="label">台湾・日本・アジア市場へ展開</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background:var(--light)">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">事業内容</h2>
+    <p class="section-desc">パワーエレクトロニクスの最前線で、日本市場のニーズに応えるソリューションを提供します。</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&q=80" alt="電力変換装置" />
+        <h3>電力変換装置</h3>
+        <p>高効率インバータ・コンバータの設計・製造。産業用途から再生可能エネルギーまで幅広く対応します。</p>
+      </div>
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=600&q=80" alt="無線電力伝送" />
+        <h3>無線電力伝送（WPT）</h3>
+        <p>EV充電・スマートホームV2Hシステムへの応用を見据えた、非接触電力伝送技術の研究開発・実装支援。</p>
+      </div>
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="EV・V2H" />
+        <h3>EV・V2H ソリューション</h3>
+        <p>電気自動車向け充電システムと家庭・建物間の双方向電力供給システムの設計・コンサルティング。</p>
+      </div>
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="SiC/GaN半導体" />
+        <h3>SiC/GaN 半導体応用</h3>
+        <p>次世代パワー半導体（SiC・GaN）を活用した高周波・高効率電力回路の研究開発サポート。</p>
+      </div>
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&q=80" alt="産業用UPS" />
+        <h3>産業用 UPS・電源</h3>
+        <p>工場・データセンター・医療施設向けの高信頼性無停電電源装置および電源管理システムの供給。</p>
+      </div>
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="技術コンサルティング" />
+        <h3>技術コンサルティング</h3>
+        <p>大学・研究機関・企業との産学連携を通じた技術開発支援、設計レビュー、規格対応サポート。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY INFO -->
+<section id="company" style="background:var(--light)">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <div class="section-label">Company Info</div>
+    <h2 class="section-title">会社情報</h2>
+    <table class="company-table">
+      <tr>
+        <td>社名</td>
+        <td>UPE Japan（UPE ジャパン）</td>
+      </tr>
+      <tr>
+        <td>設立</td>
+        <td>2026年</td>
+      </tr>
+      <tr>
+        <td>事業内容</td>
+        <td>パワーエレクトロニクス製品の販売・技術サポート・研究開発コンサルティング</td>
+      </tr>
+      <tr>
+        <td>関連会社</td>
+        <td>UPE Power Co., Ltd.（台湾）</td>
+      </tr>
+      <tr>
+        <td>顧問</td>
+        <td>大森 英樹 教授（長崎総合科学大学 客員教授）</td>
+      </tr>
+      <tr>
+        <td>所在地</td>
+        <td>所在地 調整中</td>
+      </tr>
+      <tr>
+        <td>お問い合わせ</td>
+        <td>下記フォームよりご連絡ください</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">お問い合わせ</h2>
+    <div class="contact-box">
+      <p>
+        製品に関するご質問、技術コンサルティング、産学連携のご相談など、<br>
+        お気軽にお問い合わせください。<br><br>
+        担当者より折り返しご連絡いたします。
+      </p>
+      <a href="mailto:info@upe-japan.jp" class="contact-link">メールでお問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>UPE Japan</strong><br>
+  関連会社：UPE Power Co., Ltd.（台湾）<br>
+  顧問：大森 英樹 教授（長崎総合科学大学 先進技術創生研究所 客員教授）<br><br>
+  &copy; 2026 UPE Japan. All rights reserved.
+</footer>
+
+</body>
+</html>
