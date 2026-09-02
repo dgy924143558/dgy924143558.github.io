@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>可回收奖牌 · Recyclable Medals on Solana</title>
+<meta name="description" content="赛事官方在浏览器里制作可验证的纪念奖牌（Solana Token-2022 NFT）；奖牌销毁后，制作时押入的 SOL 租金可被完整回收。">
+<link rel="icon" type="image/png" href="../images/icons.ico">
+<style>
+:root{
+  --bg:#0c0f14; --panel:#141922; --panel-2:#1b2230; --line:#252d3b;
+  --ink:#e8ecf2; --dim:#94a1b2; --faint:#66727f;
+  --gold:#e6b422; --ok:#4ecb8f; --bad:#ef6461; --link:#6fb1ff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+a{color:var(--link)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 18px 72px}
+
+/* ---- header ---- */
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#111721,#0c0f14)}
+.hd{max-width:1060px;margin:0 auto;padding:18px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+.brand h1{margin:0;font-size:19px;letter-spacing:.3px}
+.brand p{margin:0;font-size:12px;color:var(--faint)}
+.badge{font-size:11px;color:var(--gold);border:1px solid #4a3c12;background:#1d1809;padding:2px 7px;border-radius:99px}
+.hd .ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+select,input,textarea,button{font:inherit;color:var(--ink)}
+select,input,textarea{background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#3c4c66}
+textarea{resize:vertical;min-height:84px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}
+button{background:var(--panel-2);border:1px solid var(--line);border-radius:8px;padding:8px 14px;cursor:pointer}
+button:hover:not(:disabled){border-color:#44566f}
+button:disabled{opacity:.45;cursor:not-allowed}
+button.primary{background:linear-gradient(180deg,#e8bd35,#c99a10);border-color:#8a6a00;color:#241c00;font-weight:600}
+button.danger{border-color:#5a2b2b;color:#ff9d9b}
+.hd select,.hd input{width:auto;min-width:130px}
+
+/* ---- tabs ---- */
+nav.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:22px 0 24px;overflow-x:auto}
+nav.tabs button{background:none;border:none;border-bottom:2px solid transparent;border-radius:0;
+  padding:10px 14px;color:var(--dim);white-space:nowrap}
+nav.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--gold)}
+section[hidden]{display:none}
+
+/* ---- layout ---- */
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+.cols > *{min-width:0}
+@media(max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card + .card{margin-top:16px}
+.card h2{margin:0 0 4px;font-size:15px;letter-spacing:.3px}
+.card h2 small{font-weight:400;color:var(--faint);margin-left:6px;font-size:11px;letter-spacing:0}
+.card > p.help{margin:0 0 14px;color:var(--dim);font-size:13px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
+label{display:block;font-size:12px;color:var(--dim);margin:0 0 5px}
+.field{margin-bottom:14px}
+.hint{font-size:11.5px;color:var(--faint);margin-top:5px}
+.radios{display:flex;gap:8px;flex-wrap:wrap}
+.radios label{display:flex;gap:7px;align-items:center;background:var(--panel-2);border:1px solid var(--line);
+  border-radius:8px;padding:8px 11px;margin:0;color:var(--ink);font-size:13px;cursor:pointer}
+.radios input{width:auto}
+.check{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--ink)}
+.check input{width:auto;margin-top:4px}
+
+/* ---- preview / cost ---- */
+.preview{background:#080a0e;border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;justify-content:center}
+.preview svg{width:190px;height:auto}
+table.cost{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+table.cost td{padding:5px 0;border-bottom:1px dashed #222a36;color:var(--dim)}
+table.cost td:last-child{text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
+table.cost tr:last-child td{border-bottom:none;font-weight:600}
+.meter{height:5px;background:#222a36;border-radius:99px;overflow:hidden;margin-top:8px}
+.meter i{display:block;height:100%;background:var(--ok);transition:width .2s}
+.meter.warn i{background:var(--gold)} .meter.over i{background:var(--bad)}
+
+/* ---- log & lists ---- */
+pre.log{background:#080a0e;border:1px solid var(--line);border-radius:10px;padding:12px;max-height:260px;
+  overflow:auto;font:12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--dim);white-space:pre-wrap;margin:0}
+pre.log b{color:var(--ink);font-weight:600}
+pre.log .ok{color:var(--ok)} pre.log .bad{color:var(--bad)}
+.medals{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(238px,100%),1fr));gap:14px}
+.medals > *{min-width:0}
+.medal{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.medal .art{background:#080a0e;border-radius:8px;height:132px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.medal .art img,.medal .art svg{max-height:118px;max-width:100%}
+.medal h3{margin:0;font-size:14px}
+.medal dl{margin:0;font-size:12px;color:var(--dim);display:grid;grid-template-columns:auto 1fr;gap:2px 10px}
+.medal dd{margin:0;color:var(--ink);word-break:break-all}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;word-break:break-all}
+.pill{display:inline-block;font-size:10.5px;padding:2px 7px;border-radius:99px;border:1px solid var(--line);color:var(--dim)}
+.pill.ok{color:var(--ok);border-color:#245c40} .pill.warn{color:var(--gold);border-color:#4a3c12}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.spacer{flex:1}
+.empty{color:var(--faint);font-size:13.5px;padding:26px 0;text-align:center}
+.notice{border-left:3px solid var(--gold);background:#171410;padding:10px 14px;border-radius:0 8px 8px 0;font-size:13px;color:#d8cba8;margin:0 0 16px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding:0 0 16px 34px;font-size:13.5px;color:var(--dim)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:99px;
+  background:var(--panel-2);border:1px solid var(--line);color:var(--gold);font-size:12px;display:grid;place-items:center}
+.steps li b{color:var(--ink);font-weight:600}
+footer{border-top:1px solid var(--line);margin-top:48px;padding:20px 0;color:var(--faint);font-size:12.5px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hd">
+    <div class="brand">
+      <div>
+        <h1>可回收奖牌 <span class="badge">Token-2022</span></h1>
+        <p>Recyclable Medals — 赛事官方发放纪念奖牌，销毁即退还全部 SOL 租金</p>
+      </div>
+    </div>
+    <div class="ctl">
+      <select id="network" title="网络">
+        <option value="devnet" selected>Devnet（测试网）</option>
+        <option value="mainnet-beta">Mainnet（主网）</option>
+        <option value="custom">自定义 RPC</option>
+      </select>
+      <input id="rpcUrl" placeholder="https://your-rpc…" hidden>
+      <button id="connect" class="primary">连接钱包</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true"  data-tab="issue">制作与发放</button>
+    <button role="tab" aria-selected="false" data-tab="vault">我的奖牌 · 回收</button>
+    <button role="tab" aria-selected="false" data-tab="verify">验证</button>
+    <button role="tab" aria-selected="false" data-tab="about">原理与费用</button>
+  </nav>
+
+  <!-- ============ ISSUE ============ -->
+  <section id="tab-issue">
+    <p class="notice" id="netNotice">当前为 <b>Devnet 测试网</b>。测试网 SOL 没有价值，先在这里跑通一遍，再切到主网发正式奖牌。</p>
+    <div class="cols">
+      <div>
+        <div class="card">
+          <h2>奖牌内容 <small>Medal content</small></h2>
+          <p class="help">这些字段会直接写进 mint 账户，链上可查、可验证，无需依赖任何服务器。</p>
+          <div class="field">
+            <label for="f-event">赛事名称 · Event</label>
+            <input id="f-event" placeholder="银河杯春季赛 2026">
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="f-tier">等级 · Tier</label>
+              <select id="f-tier"></select>
+            </div>
+            <div class="field">
+              <label for="f-mark">徽面文字 · Face</label>
+              <input id="f-mark" value="1" maxlength="3">
+            </div>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="f-rank">名次 · Rank</label>
+              <input id="f-rank" placeholder="冠军">
+            </div>
+            <div class="field">
+              <label for="f-date">日期 · Date</label>
+              <input id="f-date" type="date">
+            </div>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="f-name">奖牌名称 · Name</label>
+              <input id="f-name" placeholder="冠军 · 银河杯 2026">
+            </div>
+            <div class="field">
+              <label for="f-symbol">符号 · Symbol</label>
+              <input id="f-symbol" value="MEDAL" maxlength="10">
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-note">备注 · Note</label>
+            <input id="f-note" placeholder="由赛事官方签发">
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>图案来源 <small>Artwork</small></h2>
+          <p class="help">决定奖牌图案存在哪里，也直接决定押入（并可回收）的租金多少。</p>
+          <div class="field radios">
+            <label><input type="radio" name="uriMode" value="onchain" checked> 纯链上自绘</label>
+            <label><input type="radio" name="uriMode" value="external"> 外部图片链接</label>
+            <label><input type="radio" name="uriMode" value="raw"> 自定义元数据 URL</label>
+          </div>
+          <div class="field" id="wrap-image" hidden>
+            <label for="f-image">图片 URL · Image URL</label>
+            <input id="f-image" placeholder="https://guiyidong.com/medal/art/champion.png">
+            <p class="hint">链接失效奖牌图就会消失；建议放在 Arweave / IPFS 或你自己的站点上。可先用右侧「下载 SVG」拿到图稿。</p>
+          </div>
+          <div class="field" id="wrap-meta" hidden>
+            <label for="f-metaurl">元数据 JSON URL</label>
+            <input id="f-metaurl" placeholder="https://…/medal.json">
+            <p class="hint">你自己托管符合 Metaplex 格式的 JSON（含 name / symbol / image）。</p>
+          </div>
+          <div class="field">
+            <label for="f-desc">描述 · Description</label>
+            <input id="f-desc" placeholder="银河杯春季赛冠军纪念奖牌">
+            <p class="hint">纯链上模式为了压缩体积不写描述，描述仍会保留在链上的 note 字段里。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>发放规则 <small>Issuance</small></h2>
+          <div class="field">
+            <label>租金回收权归属 · Who can recycle</label>
+            <div class="radios">
+              <label><input type="radio" name="closeTo" value="holder" checked> 获奖者（推荐）</label>
+              <label><input type="radio" name="closeTo" value="issuer"> 赛事方保留</label>
+            </div>
+            <p class="hint">拥有回收权的地址，在奖牌被销毁后可以关闭 mint 账户、取回全部租金。</p>
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" id="f-lock">
+              <span>锁定元数据（发放后任何人都不能再修改奖牌内容，回收功能不受影响）</span></label>
+          </div>
+          <div class="field">
+            <label for="f-recipients">获奖者地址 · Recipients</label>
+            <textarea id="f-recipients" placeholder="每行一个 Solana 地址，可选地在逗号后写获奖者名：&#10;7xKX…9fQp,Team Nova&#10;3mQa…12Zz,Alice"></textarea>
+            <p class="hint">每行生成一枚独立奖牌。留空则发给自己。</p>
+          </div>
+          <div class="row">
+            <button id="btn-issue" class="primary" disabled>连接钱包后制作</button>
+            <button id="btn-dry">仅预演（不上链）</button>
+            <span class="spacer"></span>
+            <span id="issueCount" class="pill"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>执行日志 <small>Log</small></h2>
+          <pre class="log" id="log">等待操作…</pre>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h2>预览 <small>Preview</small></h2>
+          <div class="preview" id="preview"></div>
+          <div class="row" style="margin-top:12px">
+            <button id="btn-svg">下载 SVG</button>
+            <button id="btn-png">下载 PNG</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>费用 <small>Cost per medal</small></h2>
+          <table class="cost">
+            <tr><td>mint 账户租金</td><td id="c-mint">–</td></tr>
+            <tr><td>代币账户租金</td><td id="c-ata">–</td></tr>
+            <tr><td>网络手续费（不可回收）</td><td id="c-fee">–</td></tr>
+            <tr><td>每枚押金</td><td id="c-one">–</td></tr>
+            <tr><td id="c-nlabel">合计</td><td id="c-all">–</td></tr>
+            <tr><td>销毁后可回收</td><td id="c-back">–</td></tr>
+          </table>
+          <p class="hint" id="c-note"></p>
+        </div>
+        <div class="card">
+          <h2>链上元数据体积 <small>URI size</small></h2>
+          <div class="meter" id="uriMeter"><i style="width:0"></i></div>
+          <p class="hint" id="uriInfo">–</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ VAULT ============ -->
+  <section id="tab-vault" hidden>
+    <div class="card">
+      <h2>我的奖牌 <small>Owned medals</small></h2>
+      <p class="help">列出当前钱包持有的全部 Token-2022 收藏品。销毁一枚奖牌会同时关闭它的代币账户与 mint 账户，租金在同一笔交易里退回你的钱包。</p>
+      <div class="row">
+        <button id="btn-scan" disabled>扫描钱包</button>
+        <button id="btn-recycle-all" class="danger" disabled>全部回收</button>
+        <span class="spacer"></span>
+        <span id="vaultSummary" class="pill"></span>
+      </div>
+    </div>
+    <div id="vaultList" class="medals" style="margin-top:16px"></div>
+    <p class="empty" id="vaultEmpty">连接钱包后点「扫描钱包」。</p>
+    <div class="card" style="margin-top:16px">
+      <h2>回收日志 <small>Log</small></h2>
+      <pre class="log" id="vaultLog">等待操作…</pre>
+    </div>
+  </section>
+
+  <!-- ============ VERIFY ============ -->
+  <section id="tab-verify" hidden>
+    <div class="card">
+      <h2>验证一枚奖牌 <small>Verify</small></h2>
+      <p class="help">任何人都可以用 mint 地址核对奖牌的签发方、内容与回收权归属——不需要连接钱包。</p>
+      <div class="row">
+        <input id="v-mint" placeholder="奖牌 mint 地址" style="flex:1;min-width:260px">
+        <button id="btn-verify">查询</button>
+      </div>
+    </div>
+    <div id="verifyOut" style="margin-top:16px"></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="tab-about" hidden>
+    <div class="card">
+      <h2>它是怎么做到「可回收」的 <small>How the recycling works</small></h2>
+      <p class="help">Solana 上每个账户都要押一笔与体积成正比的租金（rent）才能长期存在。奖牌的全部数据都放在自己的账户里，账户关掉，租金就原路退出来。</p>
+      <ol class="steps">
+        <li><b>制作</b>：新建一个 Token-2022 mint 账户，带 <span class="mono">MetadataPointer</span>（指向自己）、<span class="mono">TokenMetadata</span>（赛事、名次、获奖者、日期、签发方全部写在链上）和 <span class="mono">MintCloseAuthority</span> 三个扩展。</li>
+        <li><b>发放</b>：为获奖者创建代币账户并铸出 1 枚，随即把铸造权限设为 <span class="mono">null</span>——供应量永远锁死在 1，这枚奖牌不可能被增发。</li>
+        <li><b>持有</b>：奖牌是标准 NFT，钱包里能看、能转、能展示，任何人都能按 mint 地址验证真伪。</li>
+        <li><b>回收</b>：持有者销毁奖牌后供应量归零，于是可以关闭代币账户和 mint 账户；两个账户里押着的租金在同一笔交易里退回持有者的钱包。除了几乎可忽略的网络手续费，制作时押入的 SOL 一分不少。</li>
+      </ol>
+      <p class="hint">「回收权归属」决定谁能关闭 mint 账户。默认给获奖者，所以纪念意义结束时，价值回到获奖者手里，而不是烂在链上。</p>
+    </div>
+    <div class="card">
+      <h2>成本参考 <small>What it costs</small></h2>
+      <table class="cost" id="aboutCost"></table>
+      <p class="hint">按 Solana 当前的租金公式（每字节每年 3480 lamports、2 年免租门槛）计算。押金全额可回收；不可回收的只有每笔交易 0.000005 SOL 的手续费。</p>
+    </div>
+    <div class="card">
+      <h2>注意事项 <small>Caveats</small></h2>
+      <p class="help" style="margin:0">
+        · 主网公共 RPC 常常拒绝浏览器请求，正式发牌请在上方填自定义 RPC。<br>
+        · 「纯链上自绘」把图案以 data URI 写进链上，不依赖任何外部服务，但受单笔交易 1232 字节限制，图案必须足够精简。<br>
+        · 选择「外部图片链接」时，链接失效奖牌图就会消失，链上的文字信息仍然完好。<br>
+        · 回收是不可逆的：奖牌一旦销毁就无法恢复，请在测试网先演练。<br>
+        · 本页面全部在浏览器本地运行，私钥不会离开你的钱包，也没有任何后端服务器。
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    开源静态页面 · 无后端 · 无手续费抽成 —
+    <a href="../index.html">返回主页</a>
+  </footer>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
