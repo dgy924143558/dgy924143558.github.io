@@ -125,7 +125,7 @@ footer { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--rul
       <div class="col known">
         <h3>已知，不属于本课题的新贡献</h3>
         <ul>
-          <li>导师已有的 Class-E 单相 Direct AC–AC 研究和并联谐振负载模型，作为原理和模型的出发点，须规范引用。</li>
+          <li>Dr. Dong 已有的 Class-E 单相 Direct AC–AC 研究和并联谐振负载模型，作为原理和模型的出发点，须规范引用。</li>
           <li>公开专利 JP2025088491A（发明人包含董貴義等）：IH 负载与谐振电容并联、双向开关、可变电感和功率控制。专利权属、实验素材使用和后续公开须遵守所在单位规定。</li>
           <li>Guillén 等，APEC 2024，基于双向 GaN-FET 的单端 Direct AC–AC 电磁炉。说明“GaN + Direct AC–AC”本身不是新概念。其 LC 串联或并联结构，须由学生读全文核对电路图和工作模式，不能只看标题下结论。</li>
         </ul>
@@ -160,7 +160,7 @@ footer { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--rul
         </tbody>
       </table>
     </div>
-    <div class="safety"><b>安全边界。</b>本页是研究任务书，不是高功率设备装配或通电操作指南。涉及市电、数百瓦高频能量、高温工件和高频电磁场的实验，必须在有合格导师监督、合规防护和审批的实验室进行。前期以理论、仿真和实验室批准的低能量验证为主。</div>
+    <div class="safety"><b>安全边界。</b>本页是研究任务书，不是高功率设备装配或通电操作指南。涉及市电、数百瓦高频能量、高温工件和高频电磁场的实验，必须在 Dr. Dong 的监督下，在有合规防护并经过审批的实验室进行。前期以理论、仿真和实验室批准的低能量验证为主。</div>
   </section>
 
   <section>
@@ -202,10 +202,10 @@ footer { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--rul
   <section>
     <h2>研究任务</h2>
     <div class="tasks">
-      <div class="task"><span class="tag">A</span><div><h3>先行研究整理</h3><p>读导师已有论文和 JP2025088491A，画出公开资料中的已有并联谐振 Direct AC–AC 拓扑和各工作模式；完整阅读 APEC 2024 GaN 论文，核实 LC 配置、工作频率、器件、电压和功率；调查 300–500 kHz GaN IH 相关论文。输出一张区分已知研究和未解决问题的对比表。</p></div></div>
+      <div class="task"><span class="tag">A</span><div><h3>先行研究整理</h3><p>读 Dr. Dong 已有的论文和 JP2025088491A，画出公开资料中的已有并联谐振 Direct AC–AC 拓扑和各工作模式；完整阅读 APEC 2024 GaN 论文，核实 LC 配置、工作频率、器件、电压和功率；调查 300–500 kHz GaN IH 相关论文。输出一张区分已知研究和未解决问题的对比表。</p></div></div>
       <div class="task"><span class="tag">B</span><div><h3>数学模型与仿真</h3><p>建立并联谐振 Direct AC–AC 的基本模式模型，解释交流输入正负半周主、辅开关的角色；把器件寄生电容、非线性 Coss 和储能特性、回路寄生、频率相关负载纳入比较；以 ZVS 条件和开关应力为核心做参数敏感性分析。</p></div></div>
       <div class="task"><span class="tag">C</span><div><h3>高频设计方法</h3><p>在 300 kHz 基准工况下讨论 L/C 匹配范围、ZVS 边界、GaN 导通与开关损耗、反向导通特性和栅极驱动时序敏感性，定量权衡高频带来的元件减小与新增的高频损耗。优先形成设计判据或设计流程，而不是只展示一个能工作的波形。</p></div></div>
-      <div class="task"><span class="tag">D</span><div><h3>实验验证</h3><p>在导师批准的实验条件和安全制度下验证仿真结果。重点记录定义一致的频率、工况、ZVS 范围、输入与输出有功功率、效率、开关波形，以及有无工件对负载特性的影响。工件升温可以作为应用证据，论文核心仍是变换器性能和机理。</p></div></div>
+      <div class="task"><span class="tag">D</span><div><h3>实验验证</h3><p>在 Dr. Dong 批准的实验条件和安全制度下验证仿真结果。重点记录定义一致的频率、工况、ZVS 范围、输入与输出有功功率、效率、开关波形，以及有无工件对负载特性的影响。工件升温可以作为应用证据，论文核心仍是变换器性能和机理。</p></div></div>
       <div class="task"><span class="tag">E</span><div><h3>扩展项目 <span class="opt">可选</span></h3><p>完成 300 kHz 基础目标后，再考虑 500 kHz 边界、温度相关的负载适应性、元件体积比较、EMI 趋势或小型弹簧加热应用对比。不能因为扩展方向拖慢核心论文进度。</p></div></div>
     </div>
   </section>
@@ -270,7 +270,7 @@ footer { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--rul
   </section>
 
   <footer>
-    <p><b>导师给学生的核心要求：</b>从已有的并联谐振 Direct AC–AC 出发，以 GaN 在 300 kHz 级的真实高频工作特性为研究对象；先证明为什么能实现 ZVS、在哪些工况下不能实现、怎样设计才能改善，再讨论小型工件加热的应用价值。</p>
+    <p><b>Dr. Dong 对学生的核心要求：</b>从已有的并联谐振 Direct AC–AC 出发，以 GaN 在 300 kHz 级的真实高频工作特性为研究对象；先证明为什么能实现 ZVS、在哪些工况下不能实现、怎样设计才能改善，再讨论小型工件加热的应用价值。</p>
     <p>课题文件仓库：<span class="mono">github.com/dgy924143558/gan-parallel-direct-acac-thesis</span>（私有）</p>
   </footer>
 </main>
