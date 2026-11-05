@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>GaN 300 kHz 并联谐振 Direct AC–AC 课题</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: research brief in one reading column; prior-art boundary and tasks set off as the two working blocks. */
+:root {
+  --bg: #F4F6F8;
+  --paper: #FFFFFF;
+  --ink: #18222D;
+  --muted: #586572;
+  --rule: #D6DDE3;
+  --copper: #9C5320;
+  --copper-soft: #F6E9DF;
+  --known: #4F5E6B;
+  --known-soft: #E8EDF1;
+  --new: #1F6B4E;
+  --new-soft: #E1F1E9;
+  --warn: #9A3A1A;
+  --warn-soft: #FBE7DE;
+  --code: #ECF0F3;
+  --font-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161B; --paper: #171E25; --ink: #E3E8EC; --muted: #9DAAB5; --rule: #2B3741;
+    --copper: #E39A61; --copper-soft: #3A2718; --known: #A9B6C1; --known-soft: #1E2830;
+    --new: #6FCB9E; --new-soft: #16312A; --warn: #F0976A; --warn-soft: #3A2017; --code: #1C262E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161B; --paper: #171E25; --ink: #E3E8EC; --muted: #9DAAB5; --rule: #2B3741;
+  --copper: #E39A61; --copper-soft: #3A2718; --known: #A9B6C1; --known-soft: #1E2830;
+  --new: #6FCB9E; --new-soft: #16312A; --warn: #F0976A; --warn-soft: #3A2017; --code: #1C262E;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.78;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 780px; margin: 0 auto; padding-block: 44px 72px; display: grid; gap: 44px; }
+section { display: grid; gap: 14px; min-width: 0; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.32; margin: 0; }
+h1 { font-size: 1.95rem; }
+h2 { font-size: 1.32rem; border-top: 2px solid var(--ink); padding-block-start: 14px; }
+h3 { font-size: 1.04rem; }
+p, ul, ol { margin: 0; }
+ul, ol { padding-left: 1.35em; display: grid; gap: 7px; }
+a { color: var(--copper); text-underline-offset: 2px; overflow-wrap: anywhere; }
+a:focus-visible { outline: 2px solid var(--copper); outline-offset: 2px; }
+.mono, td.n { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.eyebrow { font-family: var(--font-data); font-size: .78rem; letter-spacing: .08em; color: var(--muted); }
+header { display: grid; gap: 14px; }
+.titles { display: grid; gap: 6px; border-left: 3px solid var(--copper); padding-left: 14px; }
+.titles p { font-size: .94rem; color: var(--muted); }
+.titles .lang { font-family: var(--font-data); font-size: .72rem; letter-spacing: .06em; color: var(--copper); margin-right: 8px; }
+.kw { display: flex; flex-wrap: wrap; gap: 6px; }
+.kw span { font-size: .8rem; padding: 2px 9px; border: 1px solid var(--rule); border-radius: 999px; background: var(--paper); color: var(--muted); }
+.core { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; display: grid; gap: 10px; }
+.core b { color: var(--copper); }
+.boundary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.col { border-radius: 6px; padding: 14px 16px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.col h3 { font-family: var(--font-body); font-size: .95rem; font-weight: 700; }
+.col.known { background: var(--known-soft); }
+.col.known h3 { color: var(--known); }
+.col.new { background: var(--new-soft); }
+.col.new h3 { color: var(--new); }
+.col ul { font-size: .93rem; }
+@media (max-width: 640px) { .boundary { grid-template-columns: 1fr; } }
+.tbl { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 500; font-size: .82rem; color: var(--muted); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.n { text-align: right; white-space: nowrap; }
+.eq { font-family: var(--font-data); background: var(--code); border-radius: 6px; padding: 12px 16px; overflow-x: auto; white-space: nowrap; }
+.note { font-size: .88rem; color: var(--muted); }
+.safety { background: var(--warn-soft); border-radius: 6px; padding: 14px 18px; font-size: .93rem; }
+.safety b { color: var(--warn); }
+.tasks { display: grid; gap: 10px; }
+.task { display: grid; grid-template-columns: 2.4rem 1fr; gap: 12px; background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; }
+.task .tag { font-family: var(--font-data); font-weight: 500; font-size: 1.05rem; color: var(--copper); }
+.task div { min-width: 0; display: grid; gap: 4px; }
+.task h3 { font-family: var(--font-body); font-size: .98rem; font-weight: 700; }
+.task .opt { font-family: var(--font-data); font-size: .72rem; color: var(--muted); margin-left: 6px; font-weight: 400; }
+.homework { background: var(--copper-soft); border-radius: 6px; padding: 16px 18px; display: grid; gap: 10px; }
+.refs { font-size: .9rem; }
+.refs li { overflow-wrap: anywhere; }
+footer { font-size: .85rem; color: var(--muted); border-top: 1px solid var(--rule); padding-block-start: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">修士研究课题说明 · 初版 2026-11-05 · 研究计划，所列指标尚未经过实验验证</div>
+    <h1>GaN 300 kHz 级并联谐振单相 Direct AC–AC 变换器研究</h1>
+    <div class="titles">
+      <p><span class="lang">JA</span>GaN HEMTを用いた300 kHz級並列共振形単相ダイレクトAC-ACコンバータの高周波動作特性に関する研究</p>
+      <p><span class="lang">EN</span>High-Frequency Operating Characteristics of a 300-kHz-Class GaN-Based Parallel-Resonant Single-Phase Direct AC–AC Converter</p>
+    </div>
+    <div class="kw"><span>GaN HEMT</span><span>Direct AC–AC</span><span>Class-E</span><span>并联谐振</span><span>感应加热 IH</span><span>300–500 kHz</span><span>ZVS</span><span>寄生电容</span><span>高频损耗</span><span>负载特性</span></div>
+  </header>
+
+  <section class="core">
+    <p><b>核心问题。</b>已有的 Class-E 并联谐振 Direct AC–AC 软开关设计规律，在 300–500 kHz 并采用 GaN 之后，在什么条件下仍然成立？怎样针对高频和真实 IH 负载进行设计？</p>
+    <p>课题以既有并联谐振型单相 Direct AC–AC 变换器为基础，研究用 GaN HEMT 把开关频率提升到 300 kHz 及以上的可行性：建立高频工作模型，分析软开关条件、器件寄生参数、IH 负载变化与损耗之间的关系，并用合适的实验验证。</p>
+    <p>定位是修士论文，强调有明确工程背景的理论分析、仿真和实验验证，不要求学生先发明全新拓扑。这也不是简单地把 SiC 换成 GaN 再提高频率。</p>
+  </section>
+
+  <section>
+    <h2>已有研究与创新边界</h2>
+    <div class="boundary">
+      <div class="col known">
+        <h3>已知，不属于本课题的新贡献</h3>
+        <ul>
+          <li>导师已有的 Class-E 单相 Direct AC–AC 研究和并联谐振负载模型，作为原理和模型的出发点，须规范引用。</li>
+          <li>公开专利 JP2025088491A（发明人包含董貴義等）：IH 负载与谐振电容并联、双向开关、可变电感和功率控制。专利权属、实验素材使用和后续公开须遵守所在单位规定。</li>
+          <li>Guillén 等，APEC 2024，基于双向 GaN-FET 的单端 Direct AC–AC 电磁炉。说明“GaN + Direct AC–AC”本身不是新概念。其 LC 串联或并联结构，须由学生读全文核对电路图和工作模式，不能只看标题下结论。</li>
+        </ul>
+      </div>
+      <div class="col new">
+        <h3>建议主张的研究贡献</h3>
+        <ul>
+          <li>300 kHz 级 GaN 并联谐振 Direct AC–AC 的高频工作特性。</li>
+          <li>计入 GaN 非线性输出电容和寄生参数的 ZVS 边界与设计方法。</li>
+          <li>不同 IH 负载条件下的损耗、效率和稳定性评估。</li>
+        </ul>
+        <p class="note">是否构成学术创新，要通过文献检索和成果对比来证明。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>暂定研究参数</h2>
+    <p class="note">以下是目标，不是已有结果。</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>项目</th><th>暂定计划</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>基础拓扑</td><td>单相 Direct AC–AC，Class-E 型工作，并联谐振 IH 负载</td><td>在已公开拓扑上做扩展研究</td></tr>
+          <tr><td>主要开关器件</td><td>GaN HEMT</td><td>双向电流通路和驱动工作模式须单独论证</td></tr>
+          <tr><td>基准工作频率</td><td class="mono">300 kHz</td><td>优先在此频率建立理论和验证结果</td></tr>
+          <tr><td>扩展频率</td><td class="mono">300–500 kHz</td><td>条件允许时的研究范围，不强求全范围满功率</td></tr>
+          <tr><td>研究功率等级</td><td class="mono">300–500 W 级（待定）</td><td>平台目标，不是工件吸收功率；按负载匹配和实验条件复核</td></tr>
+          <tr><td>应用对象</td><td>小型金属工件的局部 IH 加热</td><td>先选几何形状规则、材料明确的工件</td></tr>
+          <tr><td>最重要的评价指标</td><td>ZVS 范围、效率、开关与谐振应力、负载适应性</td><td>须定义测量方法和条件</td></tr>
+          <tr><td>后续可能指标</td><td>元件体积、功率密度、EMI 趋势</td><td>作为扩展研究，避免范围过大</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="safety"><b>安全边界。</b>本页是研究任务书，不是高功率设备装配或通电操作指南。涉及市电、数百瓦高频能量、高温工件和高频电磁场的实验，必须在有合格导师监督、合规防护和审批的实验室进行。前期以理论、仿真和实验室批准的低能量验证为主。</div>
+  </section>
+
+  <section>
+    <h2>为什么选 300–500 kHz</h2>
+    <div class="eq">f<sub>r</sub> = 1 / (2π √(L·C))</div>
+    <p>高频不等于电感必须极小，调整 L 和 C 的组合都可以得到较高的谐振频率。但小工件感应加热的工作线圈电感本来就往往较小，线圈几何、工件耦合、寄生电容、高频铜损和开关条件会共同限制参数选择。</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>电感 L</th><th>达到 300 kHz 所需的理想 C</th></tr></thead>
+        <tbody>
+          <tr><td class="n">64 µH</td><td class="n">4.40 nF</td></tr>
+          <tr><td class="n">10 µH</td><td class="n">28.1 nF</td></tr>
+          <tr><td class="n">5.6 µH</td><td class="n">50.3 nF</td></tr>
+          <tr><td class="n">2 µH</td><td class="n">140.7 nF</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">只用于理解数量级。此前讨论的 L = 64 µH、C = 0.05 µF 在理想 LC 模型下谐振约 89 kHz，这个数不是实际 Class-E Direct AC–AC 最佳开关频率或 ZVS 条件的直接预测；实际设计必须考虑开关模式、工件等效阻抗和 GaN 寄生参数。</p>
+    <p>IH 负载先近似为随频率和温度变化的阻抗，再分析有无工件、不同材料和尺寸、升温引起的阻抗变化对谐振电压、电流和 ZVS 边界的影响：</p>
+    <div class="eq">Z<sub>IH</sub>(f, T) ≈ R<sub>eq</sub>(f, T) + j·2πf·L<sub>eq</sub>(f, T)</div>
+  </section>
+
+  <section>
+    <h2>应用场景与工件</h2>
+    <p>300 kHz 级高频 IH 适合小型金属零件、精密金属连接部位、局部焊接或钎焊、浅层热处理等需要局部加热的场景，不以传统电磁炉的大面积锅底加热为目标。</p>
+    <p>参考案例：Ambrell 2020 年公开的不锈钢弹簧回火实验，频率 326 kHz，目标 300°C，时间 2–4 s，使用额定 2 kW、150–400 kHz 的 EASYHEAT 电源和多匝 C 形通道线圈。2 kW 是设备额定功率，原文没有给出弹簧的实际吸收功率，也不说明本课题一定需要 2 kW。</p>
+    <h3>推荐的实验负载路线</h3>
+    <ul>
+      <li><b>第一阶段，电气特性验证：</b>几何形状规则、牌号明确的小型铁磁性钢环、钢制套管或合适的铁素体不锈钢件，便于重复测量和建立等效模型。</li>
+      <li><b>第二阶段，应用验证：</b>尺寸和牌号明确的小型不锈钢弹簧，评估可加热性和动态负载变化。</li>
+      <li><b>材料注意：</b>不锈钢不是统一的磁性类别。SUS304 这类奥氏体不锈钢通常磁性较弱，冷加工也可能改变；钢种、温度和工件形状都会改变耦合和感应热效率，要先确定真实材质和热处理要求。</li>
+    </ul>
+    <h3>需求功率的数量级示例</h3>
+    <p>假设工件质量 1 g，比热容暂取 500 J/(kg·K)，从 25°C 加热到 300°C：</p>
+    <div class="eq">Q = m·c·ΔT = 0.001 × 500 × 275 = 137.5 J　　3 s 升温：P = Q/t ≈ 45.8 W</div>
+    <p>如果纯粹举例假设电源输入到工件吸热的综合效率为 20%，输入功率约 229 W。这个 20% 没有针对本平台的实测依据，实际要计入耦合、线圈损耗、工件散热、治具吸热和电源效率，弹簧质量和热处理工艺也各不相同。所以 300–500 W 只是待验证的平台目标，不能据此承诺数秒完成弹簧回火。</p>
+  </section>
+
+  <section>
+    <h2>研究任务</h2>
+    <div class="tasks">
+      <div class="task"><span class="tag">A</span><div><h3>先行研究整理</h3><p>读导师已有论文和 JP2025088491A，画出公开资料中的已有并联谐振 Direct AC–AC 拓扑和各工作模式；完整阅读 APEC 2024 GaN 论文，核实 LC 配置、工作频率、器件、电压和功率；调查 300–500 kHz GaN IH 相关论文。输出一张区分已知研究和未解决问题的对比表。</p></div></div>
+      <div class="task"><span class="tag">B</span><div><h3>数学模型与仿真</h3><p>建立并联谐振 Direct AC–AC 的基本模式模型，解释交流输入正负半周主、辅开关的角色；把器件寄生电容、非线性 Coss 和储能特性、回路寄生、频率相关负载纳入比较；以 ZVS 条件和开关应力为核心做参数敏感性分析。</p></div></div>
+      <div class="task"><span class="tag">C</span><div><h3>高频设计方法</h3><p>在 300 kHz 基准工况下讨论 L/C 匹配范围、ZVS 边界、GaN 导通与开关损耗、反向导通特性和栅极驱动时序敏感性，定量权衡高频带来的元件减小与新增的高频损耗。优先形成设计判据或设计流程，而不是只展示一个能工作的波形。</p></div></div>
+      <div class="task"><span class="tag">D</span><div><h3>实验验证</h3><p>在导师批准的实验条件和安全制度下验证仿真结果。重点记录定义一致的频率、工况、ZVS 范围、输入与输出有功功率、效率、开关波形，以及有无工件对负载特性的影响。工件升温可以作为应用证据，论文核心仍是变换器性能和机理。</p></div></div>
+      <div class="task"><span class="tag">E</span><div><h3>扩展项目 <span class="opt">可选</span></h3><p>完成 300 kHz 基础目标后，再考虑 500 kHz 边界、温度相关的负载适应性、元件体积比较、EMI 趋势或小型弹簧加热应用对比。不能因为扩展方向拖慢核心论文进度。</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>分阶段成果</h2>
+    <p class="note">按两年修士研究安排，可调整。</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>阶段</th><th>主要任务</th><th>应提交的成果</th></tr></thead>
+        <tbody>
+          <tr><td>第 1–2 周</td><td>读文献、读专利、整理研究差异</td><td>5–10 页文献汇报；先行技术对比表；疑问清单</td></tr>
+          <tr><td>第 1–2 个月</td><td>理论模型与基准仿真</td><td>模式图、状态方程、初步 ZVS 判定和参数表</td></tr>
+          <tr><td>第 3–5 个月</td><td>GaN 寄生参数与真实负载模型</td><td>300 kHz 设计区间、敏感性分析、损耗预算</td></tr>
+          <tr><td>第 6–10 个月</td><td>经审批的实验验证</td><td>条件完整的实验数据、模型对比、误差分析</td></tr>
+          <tr><td>第 11–15 个月</td><td>针对关键问题改进与扩展</td><td>新的设计准则或适应性分析、可重复的结果</td></tr>
+          <tr><td>第 16–24 个月</td><td>论文写作与发表准备</td><td>修士论文、摘要、可供后续会议投稿的稿件</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="homework">
+    <h2 style="border-top:0;padding-block-start:0">第一份作业（两周内）</h2>
+    <ol>
+      <li>画出已有并联谐振 Class-E Direct AC–AC 拓扑，说明每个开关模式和 ZVS 实现条件，每张图注明文献来源。</li>
+      <li>读懂 APEC 2024 GaN 论文，核对“串联 LC”的说法，整理拓扑、额定功率、频率、驱动模式、软开关和实验结果。拿不到全文就明确注明资料不足。</li>
+      <li>以 300 kHz 为基准，用理想模型完成 L/C 参数扫描，并解释为什么理想 LC 谐振点不等于实际 Class-E 最佳工作点。</li>
+      <li>调查两种候选工件，例如铁磁钢环和不锈钢弹簧，给出材料牌号、质量范围、预期等效阻抗变化和热过程的研究假设；不需要马上采购。</li>
+      <li>用一页纸写清楚：学生自己要证明的新增技术结论到底是什么，证明它需要哪些仿真或实验数据。</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>论文章节建议</h2>
+    <ol>
+      <li>绪论：GaN、Direct AC–AC 与高频 IH 应用背景，先行研究</li>
+      <li>已有并联谐振型单相 Direct AC–AC 的工作原理与限制</li>
+      <li>300 kHz 级 GaN 寄生参数与软开关模型</li>
+      <li>高频谐振参数、损耗和负载特性的设计分析</li>
+      <li>仿真与实验结果、误差和适用范围</li>
+      <li>结论与后续研究方向</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>成功标准与风险</h2>
+    <p><b>最低成功条件：</b>完成经文献认可的研究定位、有效模型、系统性仿真，以及在受监管实验环境下与模型一致的验证，明确给出 300 kHz 附近的 ZVS 范围和负载影响。不以“500 kHz 满功率”或“必须达到某个效率”作为毕业前提。</p>
+    <p><b>加分成果：</b>提出可复用的高频 ZVS 判据、参数设计图表或负载适应性方法，并用实验证明它相对原有模型的改进。会议或期刊发表是后续目标，不能保证接收。</p>
+    <p><b>主要风险：</b>非线性 Coss、GaN 反向导通损耗、寄生引起的电压应力、交流输入过零附近软开关消失、IH 负载阻抗随温度变化、高频线圈损耗、实际工件磁性差异。达不到预设工作点的结果，也要记录它的物理原因，而不是只追求漂亮的波形。</p>
+  </section>
+
+  <section>
+    <h2>参考资料</h2>
+    <ol class="refs">
+      <li>JP2025088491A，<i>Single-phase direct AC-AC converter and power control method thereof</i>，日本公开专利，2025-06-11 公开，发明人包含 Guiyi Dong 等。<a href="https://patents.google.com/patent/JP2025088491A/en" target="_blank" rel="noopener">patents.google.com/patent/JP2025088491A</a></li>
+      <li>P. Guillén, H. Sarnago, J. M. Burdío, Ó. Lucía，<i>Single-Ended Direct AC-AC Converter for Domestic Induction Heating Based on a Bidirectional GaN-FET</i>，IEEE APEC 2024，议程 T32.2，目录约第 1659 页起；正式格式和拓扑以全文为准。<a href="https://apec-conf.org/wp-content/uploads/2024/05/APEC2024_Program_Book_Final_Web1.pdf" target="_blank" rel="noopener">APEC 2024 Program Book</a></li>
+      <li>Ambrell，<i>Induction Tempering a Spring</i>，2020-12-22，326 kHz、300°C、2–4 s，2 kW 为设备额定值。<a href="https://www.ambrell.com/blog/induction-tempering-a-spring" target="_blank" rel="noopener">ambrell.com</a></li>
+      <li>GH Induction Atmospheres，<i>Induction Heating Guide</i>，高频感应加热与集肤效应。<a href="https://www.gh-ia.com/Images_Content/Site1/Files/ProductInformation/Brochures/gh-ia-induction-heating-guide.pdf" target="_blank" rel="noopener">gh-ia.com</a></li>
+      <li>Fuji Electronics Industry，<i>Learn the Basics of Heat Treatment</i>，感应加热基础与集肤效应。<a href="https://www.fujidenshi.co.jp/en/technology/learning/" target="_blank" rel="noopener">fujidenshi.co.jp</a></li>
+    </ol>
+  </section>
+
+  <footer>
+    <p><b>导师给学生的核心要求：</b>从已有的并联谐振 Direct AC–AC 出发，以 GaN 在 300 kHz 级的真实高频工作特性为研究对象；先证明为什么能实现 ZVS、在哪些工况下不能实现、怎样设计才能改善，再讨论小型工件加热的应用价值。</p>
+    <p>课题文件仓库：<span class="mono">github.com/dgy924143558/gan-parallel-direct-acac-thesis</span>（私有）</p>
+  </footer>
+</main>
+</body>
+</html>
