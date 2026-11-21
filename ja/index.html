@@ -72,7 +72,7 @@
      研究分野、プロジェクト、発表論文をご紹介します。ご訪問いただきありがとうございます。
     </p>
     <div class="profile-links">
-     <a href="mailto:205w902w@gsuite.kobe-u.ac.jp">
+     <a aria-controls="email-dialog" aria-haspopup="dialog" class="email-trigger" href="../images/contact-email.png">
       メール
      </a>
      <a href="https://orcid.org/0000-0003-1497-7544" rel="noopener noreferrer" target="_blank">
@@ -254,7 +254,7 @@
      論文名、著者名、掲載誌名は正確な検索と引用のため原文で掲載しています。
     </p>
     <div class="profile-links">
-     <a href="mailto:205w902w@gsuite.kobe-u.ac.jp">
+     <a aria-controls="email-dialog" aria-haspopup="dialog" class="email-trigger" href="../images/contact-email.png">
       メール
      </a>
      <a href="https://orcid.org/0000-0003-1497-7544" rel="noopener noreferrer" target="_blank">
@@ -937,5 +937,17 @@ The project required a thorough understanding of robotics, microcontroller progr
   </main>
   <script defer="" src="../homepage.js">
   </script>
+  <dialog aria-describedby="email-dialog-description" aria-labelledby="email-dialog-title" id="email-dialog">
+   <button autofocus="" class="email-close" type="button">
+    閉じる
+   </button>
+   <h2 id="email-dialog-title">
+    メール
+   </h2>
+   <p id="email-dialog-description">
+    どちらのアドレスも使用しています。画像のアドレスをメールソフトに手入力してください。
+   </p>
+   <img alt="使用中の2つのメールアドレスの画像。" draggable="false" height="168" src="../images/contact-email.png" width="698"/>
+  </dialog>
  </body>
 </html>

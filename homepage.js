@@ -25,3 +25,19 @@ controls.hidden = false;
 controls.addEventListener('change', updatePublications);
 controls.addEventListener('submit', event => event.preventDefault());
 updatePublications();
+
+const emailDialog = document.querySelector('#email-dialog');
+document.querySelectorAll('.email-trigger').forEach(trigger => {
+  trigger.addEventListener('click', event => {
+    if (typeof emailDialog.showModal !== 'function') return;
+    event.preventDefault();
+    emailDialog.showModal();
+  });
+});
+emailDialog.querySelector('.email-close').addEventListener('click', () => emailDialog.close());
+emailDialog.addEventListener('click', event => {
+  if (event.target !== emailDialog) return;
+  const rect = emailDialog.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right ||
+      event.clientY < rect.top || event.clientY > rect.bottom) emailDialog.close();
+});
