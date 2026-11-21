@@ -72,7 +72,7 @@
      Here you can learn about my research interests, projects, and publications. Thank you for visiting!
     </p>
     <div class="profile-links">
-     <a href="mailto:205w902w@gsuite.kobe-u.ac.jp">
+     <a aria-controls="email-dialog" aria-haspopup="dialog" class="email-trigger" href="images/contact-email.png">
       Email
      </a>
      <a href="https://orcid.org/0000-0003-1497-7544" rel="noopener noreferrer" target="_blank">
@@ -254,7 +254,7 @@
      Publication titles, authors, and venue names are retained in their original language for accurate citation.
     </p>
     <div class="profile-links">
-     <a href="mailto:205w902w@gsuite.kobe-u.ac.jp">
+     <a aria-controls="email-dialog" aria-haspopup="dialog" class="email-trigger" href="images/contact-email.png">
       Email
      </a>
      <a href="https://orcid.org/0000-0003-1497-7544" rel="noopener noreferrer" target="_blank">
@@ -937,5 +937,17 @@ The project required a thorough understanding of robotics, microcontroller progr
   </main>
   <script defer="" src="homepage.js">
   </script>
+  <dialog aria-describedby="email-dialog-description" aria-labelledby="email-dialog-title" id="email-dialog">
+   <button autofocus="" class="email-close" type="button">
+    Close
+   </button>
+   <h2 id="email-dialog-title">
+    Email
+   </h2>
+   <p id="email-dialog-description">
+    Please type either address below into your email app. Both addresses are in use.
+   </p>
+   <img alt="Two email addresses, displayed as an image." draggable="false" height="168" src="images/contact-email.png" width="698"/>
+  </dialog>
  </body>
 </html>

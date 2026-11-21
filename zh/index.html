@@ -72,7 +72,7 @@
      这里介绍我的研究方向、项目和学术成果。感谢您的访问！
     </p>
     <div class="profile-links">
-     <a href="mailto:205w902w@gsuite.kobe-u.ac.jp">
+     <a aria-controls="email-dialog" aria-haspopup="dialog" class="email-trigger" href="../images/contact-email.png">
       电子邮件
      </a>
      <a href="https://orcid.org/0000-0003-1497-7544" rel="noopener noreferrer" target="_blank">
@@ -254,7 +254,7 @@
      论文题名、作者与刊物名称保留原文，以便准确检索和引用。
     </p>
     <div class="profile-links">
-     <a href="mailto:205w902w@gsuite.kobe-u.ac.jp">
+     <a aria-controls="email-dialog" aria-haspopup="dialog" class="email-trigger" href="../images/contact-email.png">
       电子邮件
      </a>
      <a href="https://orcid.org/0000-0003-1497-7544" rel="noopener noreferrer" target="_blank">
@@ -937,5 +937,17 @@ The project required a thorough understanding of robotics, microcontroller progr
   </main>
   <script defer="" src="../homepage.js">
   </script>
+  <dialog aria-describedby="email-dialog-description" aria-labelledby="email-dialog-title" id="email-dialog">
+   <button autofocus="" class="email-close" type="button">
+    关闭
+   </button>
+   <h2 id="email-dialog-title">
+    电子邮件
+   </h2>
+   <p id="email-dialog-description">
+    以下两个邮箱均在使用，请根据图片手动输入邮箱地址。
+   </p>
+   <img alt="两个电子邮箱地址，以图片形式显示。" draggable="false" height="168" src="../images/contact-email.png" width="698"/>
+  </dialog>
  </body>
 </html>
