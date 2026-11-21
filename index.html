@@ -19,6 +19,11 @@
   <style>
   .w3-sidebar a {font-family: "Roboto", sans-serif}
   body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+    html { scroll-behavior: smooth; }
+    img { max-width: 100%; height: auto; }
+    .w3-sidebar .w3-bar-item { transition: background-color .2s ease; }
+    .w3-card { box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+    [hidden] { display: none !important; }
   </style>
 
   <link rel="icon" type="image/png" href="images/icons.ico">
@@ -65,7 +70,6 @@
 
     
     <a href="#Education level" class="w3-bar-item w3-button">Education</a>
-    <a href="#Previous research" class="w3-bar-item w3-button">Previous research</a>
    
   </div>
 </nav>
@@ -266,11 +270,11 @@
 
   <!-- PESA 2026 Special Session Chair -->
 <div class="w3-card w3-white w3-padding w3-margin-bottom" style="border-radius: 8px;">
-  <h4>🎙️ Role: PESA 2026 Special Session Chair (Upcoming)</h4>
+  <h4>🎙️ Role: PESA 2026 Special Session Chair</h4>
   <p>
-    Guiyi Dong serves as <b>Chair</b> of <b>Special Session 2: Advanced Energy Conversion and Charging Systems for Robotics and Electrified Mobility</b>
+    Guiyi Dong served as <b>Chair</b> of <b>Special Session 2: Advanced Energy Conversion and Charging Systems for Robotics and Electrified Mobility</b>
     at the <b>11th International Conference on Power Electronics Systems and Applications (PESA 2026)</b>,
-    to be held November 13–15, 2026 in Singapore.<br>
+    held November 13–15, 2026 in Singapore.<br>
     <a href="https://www.icpesa.net/special-session-2.html" target="_blank" style="color: #447ec9;">
       https://www.icpesa.net/special-session-2.html
     </a><br>
@@ -883,30 +887,15 @@
 
        
         
-      <div class="w3-container w3-light-grey w3-padding-32" id="technology-ability">
-  <h2>Technology Skills</h2>
-  <ul>
-    <li>Embedded systems: STM32, Kinetis, FPGA, Arduino</li>
-    <li>Embedded software: Keil, IAR, STM32CubeIDE</li>
-    <li>Programming: C, Python, C#, MATLAB, HTML/CSS/JS</li>
-    <li>PCB design: KiCAD</li>
-    <li>Power electronics simulation: PSIM, SIMetrix/SIMPLIS</li>
-    <li>Digital & analog circuit design</li>
-    <li>AI tools</li>
-    <li>Operating systems: Linux (Ubuntu), Windows</li>
-    <li>Linux web server setup & management</li>
-    <li>E-commerce: OpenCart deployment</li>
-    <li>Typesetting: LaTeX</li>
-  </ul>
-</div>
+      <!-- Technology Skills section intentionally removed. -->
 
         
 
         
   </div>
   <div class="w3-container w3-light-grey w3-padding-32" id="Education level">
-    <h2>Education level</h2>
-    <p><li> 04/2022-Now, PhD at Kobe University Graduate School of Maritime Sciences. </li></p>
+    <h2>Education</h2>
+    <p><li> 04/2022–03/2025, Ph.D., Graduate School of Maritime Sciences, Kobe University. </li></p>
        <p><li> 04/2020-03/2022,　Postgraduate at Gunma University Graduate School of Science and Technology. </li></p>
        <p><li> 09/2015-06/2019, bachelor at School of Electrical and Information Engineering ,Shandong Jianzhu University. </li></p>
    </div>
@@ -918,7 +907,7 @@
  <!-- The Publications Section -->
   
 
- <div class="w3-container w3-light-grey w3-padding-32" id="Previous research">
+ <div class="w3-container w3-light-grey w3-padding-32" id="Previous research" hidden aria-hidden="true">
   <h2>Previous research</h2>
   <h4><li>Dual-Active Single-Ended Wireless V2H System</li></h4>
   <img style="width:30%;" src="images/IEEE_12.png"> 
