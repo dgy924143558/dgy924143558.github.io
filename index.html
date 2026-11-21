@@ -1,1018 +1,996 @@
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-
-<head>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  
-  <title>Guiyi Dong's Homepage</title>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="I am working at Toyota Motor Corporation, specializing in power electronics and drive technologies for robotic applications.">
-  <meta name="keywords" content="Guiyi Dong,  董貴義">
-  <meta name="author" content="Guiyi Dong" />
-
-  <link rel="stylesheet" href="w3.css">
-
-  <style>
-  .w3-sidebar a {font-family: "Roboto", sans-serif}
-  body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
-    html { scroll-behavior: smooth; }
-    img { max-width: 100%; height: auto; }
-    .w3-sidebar .w3-bar-item { transition: background-color .2s ease; }
-    .w3-card { box-shadow: 0 2px 12px rgba(0,0,0,.07); }
-    [hidden] { display: none !important; }
-  </style>
-
-  <link rel="icon" type="image/png" href="images/DONG1.png">
-  <link rel="apple-touch-icon" href="images/DONG1.png">
-  <!--
-  <script src="jquery.min.js"></script>
-  <script>
-  $(document).ready(function(){
-    // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-        // Store hash
-        var hash = this.hash;
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
-    });
-  });
-  </script>
-  //-->
-
-</head>
-
-
-<body class="w3-content" style="max-width:1000px">
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-collapse w3-top w3-right" style="z-index:3;width:150px" id="mySidebar">
-  <div class="w3-container w3-display-container w3-padding-16">
-    <h3><b>Guiyi</b></h3>
-  </div>
-  <div class="w3-padding-64 w3-text-light-grey w3-large" style="font-weight:bold">
-    <a href="#home" class="w3-bar-item w3-button">Home</a>
-    <a href="#NEWS" class="w3-bar-item w3-button">News</a>
-    <a href="#award" class="w3-bar-item w3-button">Publications</a>
-
-    
-    <a href="#Education level" class="w3-bar-item w3-button">Education</a>
-   
-  </div>
-</nav>
-
-<!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-  <div class="w3-bar-item w3-padding-24">GUIYI</div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right"  style="font-stretch: extra-expanded;" onclick="w3_open()"><b>≡</b></a>
-  </div>
-</header>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:150px">
-
-  <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-
-<!-- The Home Section -->
-    <div class="w3-container w3-center w3-padding-32" id="home">
-      <img style="width: 80%;max-width: 320px" alt="profile photo" src="images/DONG1.png">
-      <h1>Guiyi Dong</h1>
-      <p class="w3-justify" style="width:100%; border:0px; border-spacing:0px; border-collapse:separate; margin-right:auto; margin-left:auto; max-width:600px;">
-        Welcome to my personal webpage! I came to Japan in October 2019 and received my Ph.D. degree from the 
-        <a href="http://www.maritime.kobe-u.ac.jp/" target="_blank">Graduate School of Maritime Sciences, Kobe University</a> 
-        in March 2025. 
-        Currently, I am working at 
-        <a href="https://global.toyota/en/" target="_blank">Toyota Motor Corporation</a>, 
-        specializing in power electronics and drive technologies for robotic applications.
-        <br><br>
-        On this page, you can learn more about my research interests, projects, and publications.
-        <br><br>
-        Thank you for visiting!
-  <style>
-    .pub-item {
-      padding: 16px 20px;
-      transition: background 0.3s;
-      list-style: none;
-    }
-  
-    .pub-item:hover {
-      background-color: #f9f9f9;
-    }
-  
-    .pub-title a {
-      font-size: 12px;
-      font-weight: bold;
-      color: #007acc;
-      text-decoration: none;
-    }
-  
-    .pub-title a{
- 
-    }
-  
-    .pub-authors {
-      font-size: 10px;
-      color: #555;
-      margin-top: 4px;
-    }
-  
-    .pub-meta {
-      font-size: 13px;
-      color: #777;
-      margin-top: 2px;
-    }
-  
-    .pub-labels {
-      margin-top: 3px;
-    }
-  
-    .pub-labels .badge {
-      display: inline-block;
-      background-color: #3498db;
-      color: white;
-      font-size: 12px;
-      padding: 2px 8px;
-      border-radius: 10px;
-      margin-right: 6px;
-    }
-  </style>
-  <style>
-    .profile-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px 10px;
-      margin-top: 20px;
-    }
-
-    .profile-links a {
-      display: inline-block;
-      padding: 6px 14px;
-      border: 1px solid #c9d3de;
-      border-radius: 999px;
-      background: #fff;
-      color: #1f4f7a;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .profile-links a:hover {
-      background: #eef4fa;
-      border-color: #7aa7d1;
-    }
-  </style>
-
-  <div class="profile-links">
-    <a href="mailto:205w902w@gsuite.kobe-u.ac.jp">Email</a>
-    <a href="https://orcid.org/0000-0003-1497-7544" target="_blank" rel="noopener">ORCID</a>
-    <a href="https://github.com/dgy924143558" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://ieeexplore.ieee.org/author/37089684065" target="_blank" rel="noopener">IEEE Xplore</a>
-    <a href="https://scholar.google.com/citations?user=78R3cokAAAAJ&amp;hl=ja" target="_blank" rel="noopener">Google Scholar</a>
-    <a href="https://www.researchgate.net/profile/Guiyi-Dong" target="_blank" rel="noopener">ResearchGate</a>
-    <a href="https://researchmap.jp/guiyi_dong" target="_blank" rel="noopener">researchmap</a>
-  </div>
-  
-        </tbody></table>
-        
-  </div>
- 
-
-   <h2>News</h2>
-<div class="w3-container w3-padding-32" id="NEWS">
- <!-- IEEE TPEL 2024 Prize Paper Award -->
-<div class="w3-card w3-white w3-padding w3-margin-bottom" style="border-radius: 8px;">
-  <h4>🏆Guiyi DONG Awarded IEEE TPEL 2024 Second Place Prize Paper Award</h4>
-
-  <!-- English -->
-  <p>
-    The paper  
-    <i>“Over 98% Efficiency SiC-MOSFET Based Four-Phase Interleaved Bidirectional DC–DC Converter Featuring Wide-Range Voltage Ratio”</i>  
-    has received the <b>2024 Second Place Prize Paper Award</b> from <b>IEEE Transactions on Power Electronics (TPEL)</b>.<br>
-    <b>Guiyi Dong</b>, as the <b>second author</b>, is among the award recipients.  
-    Out of 1,241 papers published in 2024, only 16 (≈1.2%) were selected for this honor.
-  </p>
-
-  <!-- Japanese -->
-  <p>
-    論文  
-    <i>“Over 98% Efficiency SiC-MOSFET Based Four-Phase Interleaved Bidirectional DC–DC Converter Featuring Wide-Range Voltage Ratio”</i>  
-    が <b>IEEE Transactions on Power Electronics (TPEL)</b> において  
-    <b>2024年度 優秀論文賞（Second Place Prize Paper Award）</b> に選出されました。<br>
-    <b>董　貴義(Guiyi Dong)</b> は第2著者として受賞に名を連ねています。  
-    本年度は、1,241篇中わずか16篇（約1.2%）が選出されました。
-  </p>
-
-  <p>
-    📄 <a href="https://ieeexplore.ieee.org/document/10502276" target="_blank" style="color: #447ec9;">IEEE Xplore Link / リンク</a>
-  </p>
-</div>
-
-  <!-- ITEC-AP 2025 Co-Chair -->
-<div class="w3-card w3-white w3-padding w3-margin-bottom" style="border-radius: 8px;">
-  <h4>🎙️ Role: ITEC-AP 2025 Special Session Co-Chair</h4>
-  <p>
-    Guiyi Dong served as <b>Special Session Co-Chair</b> at the
-    <b>IEEE Transportation Electrification Conference and Expo, Asia-Pacific (ITEC-AP 2025)</b>.<br>
-    <a href="https://www.itec-ap2025.com/?page_id=496" target="_blank" style="color: #447ec9;">
-      https://www.itec-ap2025.com/?page_id=496
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Guiyi Dong's Homepage
+  </title>
+  <meta content="Welcome to my personal webpage! I am based in Aichi, Japan, and received my Ph.D. from the Graduate School of Maritime Sciences, Kobe University in March 2025. Currently, I work at Toyota Motor Corporation, specializing in power electronics and drive technologies for robotic applications." name="description"/>
+  <meta content="Guiyi Dong" name="author"/>
+  <link href="homepage.css" rel="stylesheet"/>
+  <link href="images/favicon-transparent.png" rel="icon" type="image/png"/>
+  <link href="images/favicon-transparent.png" rel="apple-touch-icon"/>
+  <link href="https://guiyidong.com/" hreflang="en" rel="alternate"/>
+  <link href="https://guiyidong.com/zh/" hreflang="zh" rel="alternate"/>
+  <link href="https://guiyidong.com/ja/" hreflang="ja" rel="alternate"/>
+  <link href="https://guiyidong.com/" hreflang="x-default" rel="alternate"/>
+  <link href="https://guiyidong.com/" rel="canonical"/>
+ </head>
+ <body>
+  <aside>
+   <a class="brand" href="#home">
+    Guiyi
+   </a>
+   <nav aria-label="Home">
+    <a href="#home">
+     Home
     </a>
-  </p>
-</div>
-
-  <!-- Toyota ELEY Robot -->
-<div class="w3-card w3-white w3-padding w3-margin-bottom" style="border-radius: 8px;">
-  <h4>🤖 Featured: Toyota ELEY Robot — 未来につながる研究</h4>
-  <p>
-    Toyota Motor Corporation's Future Creation Center published an article on the new robot
-    <b>ELEY (Embodied Learning robot for Enhanced Yield)</b>, a next-generation mobile manipulator
-    designed for gentle contact with the environment using Quasi Direct Drive (QDD) actuators.
-    Guiyi Dong is part of the research team at the Future Creation Center.<br><br>
-    トヨタ自動車 未来創生センターにて、周囲の環境に「やさしく触れる」ことを実現する次世代ロボット
-    <b>ELEY（エリー）</b>に関する記事が公開されました。QDD（準ダイレクトドライブ）アクチュエータを採用し、
-    高いバックドライバビリティと低慣性を両立した腕を持つロボットです。（2026年3月31日）<br>
-    <a href="https://global.toyota/jp/mobility/frontier-research/44105139.html" target="_blank" style="color: #447ec9;">
-      https://global.toyota/jp/mobility/frontier-research/44105139.html
+    <a href="#NEWS">
+     News
     </a>
-  </p>
-</div>
-
-
-  <!-- ICPS 2026 Special Session Chair -->
-<div class="w3-card w3-white w3-padding w3-margin-bottom" style="border-radius: 8px;">
-  <h4>🎙️ Role: IEEE ICPS 2026 Special Session Chair</h4>
-  <p>
-    Guiyi Dong served as <b>Session Chair</b> of <b>Session 11: Power Electronics and Energy Systems for Industrial Cyber-Physical Systems</b>
-    at the <b>9th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS 2026)</b>,
-    held May 11–14, 2026 in Perth, Australia.<br>
-    <a href="https://icps2026.ieee-ies.org/" target="_blank" style="color: #447ec9;">
-      https://icps2026.ieee-ies.org/
+    <a href="#award">
+     Publications
     </a>
-  </p>
-</div>
-
-  <!-- PESA 2026 Special Session Chair -->
-<div class="w3-card w3-white w3-padding w3-margin-bottom" style="border-radius: 8px;">
-  <h4>🎙️ Role: PESA 2026 Special Session Chair</h4>
-  <p>
-    Guiyi Dong served as <b>Chair</b> of <b>Special Session 2: Advanced Energy Conversion and Charging Systems for Robotics and Electrified Mobility</b>
-    at the <b>11th International Conference on Power Electronics Systems and Applications (PESA 2026)</b>,
-    held November 13–15, 2026 in Singapore.<br>
-    <a href="https://www.icpesa.net/special-session-2.html" target="_blank" style="color: #447ec9;">
-      https://www.icpesa.net/special-session-2.html
-    </a><br>
-    Talk and session script with audio, for rehearsal:
-    <a href="pesa2026/" style="color: #447ec9;">guiyidong.com/pesa2026</a>
-  </p>
-</div>
-
-  <!-- Award -->
-  <div class="w3-card w3-white w3-padding w3-margin-bottom" style="border-radius: 8px;">
-    <h4>🏆 Award: 産業応用部門 優秀論文発表賞　2023</h4>
+    <a href="#education">
+     Education
+    </a>
+   </nav>
+  </aside>
+  <main>
+   <nav aria-label="Language" class="languages">
+    <span>
+     Language
+    </span>
+    <a href="zh/index.html" hreflang="zh" lang="zh">
+     简体中文
+    </a>
+    <a href="ja/index.html" hreflang="ja" lang="ja">
+     日本語
+    </a>
+    <span aria-current="page" lang="en">
+     English
+    </span>
+   </nav>
+   <section class="profile" id="home">
+    <img alt="Guiyi Dong" height="274" src="images/DONG1.png" width="320"/>
+    <h1>
+     Guiyi Dong
+    </h1>
     <p>
-      電気学会 産業応用部門より優秀論文発表賞を受賞しました。
+     Welcome to my personal webpage! I am based in Aichi, Japan, and received my Ph.D. from the
+     <a href="http://www.maritime.kobe-u.ac.jp/" rel="noopener noreferrer" target="_blank">
+      Graduate School of Maritime Sciences, Kobe University
+     </a>
+     in March 2025. Currently, I work at
+     <a href="https://global.toyota/en/" rel="noopener noreferrer" target="_blank">
+      Toyota Motor Corporation
+     </a>
+     , specializing in power electronics and drive technologies for robotic applications.
     </p>
-  </div>
-    <div class="w3-card w3-white w3-padding w3-margin-bottom" style="border-radius: 8px;">
-    <h4>🏆 Award: 産業応用部門 優秀論文発表賞　2022</h4>
     <p>
-      電気学会 産業応用部門より優秀論文発表賞を受賞しました。
+     Here you can learn about my research interests, projects, and publications. Thank you for visiting!
     </p>
-  </div>
-
- 
-
-  <!-- Prof. Vivek Agarwal Visit 
-  <div class="w3-card w3-white w3-padding w3-margin-bottom" style="border-radius: 8px;">
-    <h4>👨‍🔬 Guest Visit: Prof. Vivek Agarwal (IIT Bombay)</h4>
-    <p>
-      インド工科大学ボンベイ校（IIT Bombay）の Vivek Agarwal 教授をトヨタ未来創生センターへご招待・ご案内いたしました。
+    <div class="profile-links">
+     <a href="mailto:205w902w@gsuite.kobe-u.ac.jp">
+      Email
+     </a>
+     <a href="https://orcid.org/0000-0003-1497-7544" rel="noopener noreferrer" target="_blank">
+      ORCID
+     </a>
+     <a href="https://github.com/dgy924143558" rel="noopener noreferrer" target="_blank">
+      GitHub
+     </a>
+     <a href="https://ieeexplore.ieee.org/author/37089684065" rel="noopener noreferrer" target="_blank">
+      IEEE Xplore
+     </a>
+     <a href="https://scholar.google.com/citations?user=78R3cokAAAAJ&amp;hl=ja" rel="noopener noreferrer" target="_blank">
+      Google Scholar
+     </a>
+     <a href="https://www.researchgate.net/profile/Guiyi-Dong" rel="noopener noreferrer" target="_blank">
+      ResearchGate
+     </a>
+     <a href="https://researchmap.jp/guiyi_dong" rel="noopener noreferrer" target="_blank">
+      researchmap
+     </a>
+    </div>
+   </section>
+   <section id="research-impact">
+    <h2>
+     Research impact
+    </h2>
+    <table class="metrics">
+     <caption>
+      Google Scholar
+     </caption>
+     <thead>
+      <tr>
+       <th scope="col">
+        Metric
+       </th>
+       <th scope="col">
+        All time
+       </th>
+       <th scope="col">
+        Since 2021
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <th scope="row">
+        Citations
+       </th>
+       <td>
+        121
+       </td>
+       <td>
+        121
+       </td>
+      </tr>
+      <tr>
+       <th scope="row">
+        h-index
+       </th>
+       <td>
+        6
+       </td>
+       <td>
+        6
+       </td>
+      </tr>
+      <tr>
+       <th scope="row">
+        i10-index
+       </th>
+       <td>
+        4
+       </td>
+       <td>
+        4
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p class="meta">
+     Updated 2026-11-21 · Google Scholar snapshot; values may change.
+     <a href="https://scholar.google.com/citations?user=78R3cokAAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank">
+      Google Scholar
+     </a>
     </p>
-  </div>
--->
-</div>
-  
-
-  
-    <div class="w3-container w3-padding-32" id="award">
-      <h2>Publications</h2>
-      <p style="font-size:16px; text-align: center;">
-        You can view my publications through the following platforms:
-      </p>
-    
-      <div class="profile-links">
-        <a id="cy-effective-orcid-url" href="https://orcid.org/0000-0003-1497-7544" target="_blank" rel="me noopener noreferrer">ORCID</a>
-        <a href="https://researchmap.jp/guiyi_dong" target="_blank" rel="noopener noreferrer">researchmap</a>
-        <a href="https://scholar.google.com/citations?user=78R3cokAAAAJ&amp;hl=ja" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        <a href="https://ieeexplore.ieee.org/author/37089684065" target="_blank" rel="noopener noreferrer">IEEE Xplore</a>
-      </div>
-      <p style="font-size:16px; text-align: center;">
-        Publications marked with 📘 are journal articles. Entries without this symbol are international conference proceedings.
-      </p>
-      
-
-            <!-- ICPS 2026 papers -->
-<li class="pub-item">
-  <div class="pub-title">
-    <a href="https://ieeexplore.ieee.org/document/11567959" target="_blank">
-      A Dual-Parameter-Tuned WPT System with Decoupled PFM Control for EV Charging
-    </a>
-  </div>
-  <div class="pub-authors">
-    Yong Ying, Ching-Ming Lai, <b>Guiyi Dong</b>, Chi Kong Tse
-  </div>
-  <div class="pub-meta">
-    2026 9th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS), Perth, Australia, 2026
-  </div>
-  <div class="pub-labels">
-    <span class="badge">査読有り</span>
-  </div>
-</li>
-
-<li class="pub-item">
-  <div class="pub-title">
-    <a href="https://ieeexplore.ieee.org/document/11567954" target="_blank">
-      Class-E Direct AC–AC Converter with Input-Polarity-Independent Operation for Wireless Power Transfer
-    </a>
-  </div>
-  <div class="pub-authors">
-    Yu-Zhi Huang, <b>Guiyi Dong</b>, Ching-Ming Lai, Chi Kong Tse, Shiqiang Liu
-  </div>
-  <div class="pub-meta">
-    2026 9th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS), Perth, Australia, 2026
-  </div>
-  <div class="pub-labels">
-    <span class="badge">査読有り</span>
-
-  </div>
-</li>
-
-<li class="pub-item">
-  <div class="pub-title">
-    <a href="https://ieeexplore.ieee.org/document/11567970" target="_blank">
-      Three-Switch Three-Phase Class-E Direct AC–AC Converter for Induction Heating
-    </a>
-  </div>
-  <div class="pub-authors">
-    Dong Zhou Yang, <b>Guiyi Dong</b>, Kaiwen Chen, Ching-Ming Lai
-  </div>
-  <div class="pub-meta">
-    2026 9th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS), Perth, Australia, 2026
-  </div>
-  <div class="pub-labels">
-    <span class="badge">査読有り</span>
-
-  </div>
-</li>
-
-            <li class="pub-item">
-  <div class="pub-title">
-    <a href="https://doi.org/10.1109/TIA.2025.3577138" target="_blank">
-      📘 <span class="badge" style="background-color: #ff4d4d; color: white;">Journal Paper</span> Single-Phase High-Frequency Resonant Direct AC–AC Converter with Constant Off-Time Pulse Coding Modulation for Fluid Water Induction Heating
-    </a>
-  </div>
-  <div class="pub-authors">
-    Guiyi Dong, Tomokazu Mishima, Shiqiang Liu, Ching-Ming Lai, Liang-Rui Chen
-  </div>
-  <div class="pub-meta">
-    IEEE Transactions on Industry Applications, vol. 61, no. 6, 2025
-  </div>
-  <div class="pub-labels">
-    <span class="badge">査読有り</span>
-     <span class="badge">筆頭著者</span>
-  </div>
-</li>
-
-
-   <li class="pub-item">
-    <div class="pub-title">
-      <a href="https://ieeexplore.ieee.org/document/10879796" target="_blank">
-        📘 <span class="badge" style="background-color: #ff4d4d; color: white;">Journal Paper</span> Asymmetrical Duty-Cycle Limit Control-Based Multiport Bidirectional DC–DC Converter for Distributed Energy Storage System Applications
+   </section>
+   <section id="NEWS">
+    <h2>
+     News
+    </h2>
+    <article class="news-item">
+     <time datetime="2026-11-13">
+      2026-11-13 – 2026-11-15
+     </time>
+     <h3>
+      PESA 2026 Special Session Chair
+     </h3>
+     <p>
+      Guiyi Dong chaired Special Session 2: Advanced Energy Conversion and Charging Systems for Robotics and Electrified Mobility at the 11th PESA, held November 13–15, 2026 in Singapore.
+     </p>
+     <p>
+      <a href="https://www.icpesa.net/special-session-2.html" rel="noopener noreferrer" target="_blank">
+       Details
       </a>
+     </p>
+     <p>
+      <a href="pesa2026/">
+       Talk and session rehearsal with audio
+      </a>
+     </p>
+    </article>
+    <article class="news-item">
+     <time datetime="2026-11-12">
+      2026-11-12
+     </time>
+     <h3>
+      Toyota Frontier Research Center features our PESA 2026 research
+     </h3>
+     <p>
+      Toyota Frontier Research Center highlighted our work on DC-link soft switching for partner-robot joint drive inverters, aimed at reducing EMI and switching losses. The posts also introduced my role as Special Session 2 chair at PESA 2026.
+     </p>
+     <p>
+      <a href="https://x.com/TOYOTA_FRC/status/2120654051348226447" rel="noopener noreferrer" target="_blank">
+       X post (Japanese)
+      </a>
+      ·
+      <a href="https://x.com/TOYOTA_FRC/status/2120654302628954167" rel="noopener noreferrer" target="_blank">
+       X post (English)
+      </a>
+     </p>
+    </article>
+    <article class="news-item">
+     <time datetime="2026-05-11">
+      2026-05-11 – 2026-05-14
+     </time>
+     <h3>
+      IEEE ICPS 2026 Session Chair
+     </h3>
+     <p>
+      Guiyi Dong chaired Session 11: Power Electronics and Energy Systems for Industrial Cyber-Physical Systems at the 9th IEEE ICPS, held May 11–14, 2026 in Perth, Australia.
+     </p>
+     <p>
+      <a href="https://icps2026.ieee-ies.org/" rel="noopener noreferrer" target="_blank">
+       Details
+      </a>
+     </p>
+    </article>
+    <article class="news-item">
+     <time datetime="2026-03-31">
+      2026-03-31
+     </time>
+     <h3>
+      Toyota ELEY Robot
+     </h3>
+     <p>
+      Toyota’s Future Creation Center introduced ELEY (Embodied Learning robot for Enhanced Yield), a next-generation mobile manipulator designed for gentle contact with its environment. Its Quasi Direct Drive (QDD) actuators combine high backdrivability and low inertia. Guiyi Dong is part of the research team. Published March 31, 2026.
+     </p>
+     <p>
+      <a href="https://global.toyota/jp/mobility/frontier-research/44105139.html" rel="noopener noreferrer" target="_blank">
+       Details
+      </a>
+     </p>
+    </article>
+    <article class="news-item">
+     <time datetime="2025-11-25">
+      2025-11-25 – 2025-11-28
+     </time>
+     <h3>
+      ITEC-AP 2025 Special Session Co-Chair
+     </h3>
+     <p>
+      Guiyi Dong served as Special Session Co-Chair at the IEEE Transportation Electrification Conference and Expo, Asia-Pacific (ITEC-AP 2025).
+     </p>
+     <p>
+      <a href="https://www.itec-ap2025.com/?page_id=496" rel="noopener noreferrer" target="_blank">
+       Details
+      </a>
+     </p>
+    </article>
+    <article class="news-item">
+     <time datetime="2025-10">
+      2025-10
+     </time>
+     <h3>
+      IEEE TPEL 2024 Second Place Prize Paper Award
+     </h3>
+     <p>
+      The paper “Over 98% Efficiency SiC-MOSFET Based Four-Phase Interleaved Bidirectional DC–DC Converter Featuring Wide-Range Voltage Ratio” received the 2024 Second Place Prize Paper Award from IEEE Transactions on Power Electronics. Guiyi Dong is an award recipient as second author. Of 1,241 papers published in 2024, 16 (approximately 1.2%) were selected.
+     </p>
+     <p>
+      <a href="https://ieeexplore.ieee.org/document/10502276" rel="noopener noreferrer" target="_blank">
+       Details
+      </a>
+     </p>
+    </article>
+    <article class="news-item">
+     <time datetime="2023">
+      2023 · Award year
+     </time>
+     <h3>
+      IEEJ Industry Applications Society Excellent Presentation Award 2023
+     </h3>
+     <p>
+      Received the Excellent Presentation Award from the IEEJ Industry Applications Society.
+     </p>
+     <p>
+      <a href="https://www.iee.jp/ias/about/award/paper2023/" rel="noopener noreferrer" target="_blank">
+       Award recipients
+      </a>
+     </p>
+    </article>
+    <article class="news-item">
+     <time datetime="2022">
+      2022 · Award year
+     </time>
+     <h3>
+      IEEJ Industry Applications Society Excellent Presentation Award 2022
+     </h3>
+     <p>
+      Received the Excellent Presentation Award from the IEEJ Industry Applications Society.
+     </p>
+     <p>
+      <a href="https://www.iee.jp/ias/about/award/paper2022/" rel="noopener noreferrer" target="_blank">
+       Award recipients
+      </a>
+     </p>
+    </article>
+   </section>
+   <section id="award">
+    <h2>
+     Publications
+    </h2>
+    <p>
+     Publication titles, authors, and venue names are retained in their original language for accurate citation.
+    </p>
+    <div class="profile-links">
+     <a href="mailto:205w902w@gsuite.kobe-u.ac.jp">
+      Email
+     </a>
+     <a href="https://orcid.org/0000-0003-1497-7544" rel="noopener noreferrer" target="_blank">
+      ORCID
+     </a>
+     <a href="https://github.com/dgy924143558" rel="noopener noreferrer" target="_blank">
+      GitHub
+     </a>
+     <a href="https://ieeexplore.ieee.org/author/37089684065" rel="noopener noreferrer" target="_blank">
+      IEEE Xplore
+     </a>
+     <a href="https://scholar.google.com/citations?user=78R3cokAAAAJ&amp;hl=ja" rel="noopener noreferrer" target="_blank">
+      Google Scholar
+     </a>
+     <a href="https://www.researchgate.net/profile/Guiyi-Dong" rel="noopener noreferrer" target="_blank">
+      ResearchGate
+     </a>
+     <a href="https://researchmap.jp/guiyi_dong" rel="noopener noreferrer" target="_blank">
+      researchmap
+     </a>
     </div>
-    <div class="pub-authors">
-      Shiqiang Liu, Guiyi Dong, Yong Ying, Ching-Ming Lai, Tomokazu Mishima
-    </div>
-    <div class="pub-meta">
-      IEEE Transactions on Power Electronics, vol. 40, no. 7, 2025
-    </div>
-    <div class="pub-labels">
-      <div class="pub-labels">
-        <span class="badge">査読有り</span>
-    </div>
-    </li>
-
-    <!-- 2025 conference papers -->
-    <li class="pub-item">
-      <div class="pub-title">
-        <a href="https://ieeexplore.ieee.org/document/11345038" target="_blank">
-          A Zero-Voltage Switching Approach for Low-Voltage Fully GaN-Based DC-Link Inverters in Robotic Brushless Motor Applications
-        </a>
-      </div>
-      <div class="pub-authors">
-        <b>Guiyi Dong</b>, Y. Sato, Y. Okumatsu
-      </div>
-      <div class="pub-meta">
-        2025 IEEE Transportation Electrification Conference and Expo, Asia-Pacific (ITEC Asia-Pacific), 2025
-      </div>
-      <div class="pub-labels">
-        <span class="badge">査読有り</span>
-        <span class="badge">筆頭著者</span>
-      </div>
-    </li>
-
-    <li class="pub-item">
-      <div class="pub-title">
-        <a href="https://ieeexplore.ieee.org/document/11345051" target="_blank">
-          A Class-E Direct AC–AC Converter with a Novel Pulse Modulation Strategy for Induction Heating
-        </a>
-      </div>
-      <div class="pub-authors">
-        Tsung-Han Wu, <b>Guiyi Dong</b>, Ching-Ming Lai, Shiqiang Liu, Yong Ying, Tian Luo, Hideki Omori
-      </div>
-      <div class="pub-meta">
-        2025 IEEE Transportation Electrification Conference and Expo, Asia-Pacific (ITEC Asia-Pacific), 2025
-      </div>
-      <div class="pub-labels">
-        <span class="badge">査読有り</span>
-      </div>
-    </li>
-
-    <li class="pub-item">
-      <div class="pub-title">
-        <a href="https://ieeexplore.ieee.org/document/11301572" target="_blank">
-          A Multi-Input High-Gain DC-DC Converter with Hybrid Fuel Cell/Battery Generation for DC-MGs
-        </a>
-      </div>
-      <div class="pub-authors">
-        Ching-Ming Lai, Ming-Ho Pan, Meng-Zong Chen, <b>Guiyi Dong</b>, Hideki Omori
-      </div>
-      <div class="pub-meta">
-        2025 International Future Energy Electronics Conference (IFEEC), 2025
-      </div>
-      <div class="pub-labels">
-        <span class="badge">査読有り</span>
-      </div>
-    </li>
-
-    <li class="pub-item">
-      <div class="pub-title">
-        <a href="https://ieeexplore.ieee.org/document/11325962" target="_blank">
-          Noise Notch Frequency Design for EMI Mitigation in DC-DC Converters Using Digital-to-Time Converter
-        </a>
-      </div>
-      <div class="pub-authors">
-        Yasunori Kobori, Yifei Sun, <b>Guiyi Dong</b>, Nobukazu Tsukiji, Ramin Khatami, Takuya Arafune, Shogo Katayama, Anna Kuwana, Jianglin Wei, Haruo Kobayashi
-      </div>
-      <div class="pub-meta">
-        2025 IEEE 16th International Conference on ASIC (ASICON), 2025
-      </div>
-      <div class="pub-labels">
-        <span class="badge">査読有り</span>
-      </div>
-    </li>
-
-    <li class="pub-item">
-      <div class="pub-title">
-        <a href="https://ieeexplore.ieee.org/document/10861800" target="_blank">
-          Fixed-Off-Time Pulse Coding Modulation for Single-Phase Resonant Direct AC-AC Converter in High-Frequency Induction Heating Systems
-        </a>
-      </div>
-      <div class="pub-authors">
-        Guiyi Dong, Shiqiang Liu, Tomokazu Mishima, Ching-Ming Lai
-      </div>
-      <div class="pub-meta">
-        2024 IEEE Energy Conversion Congress and Exposition (ECCE), pp. 3420–3426, 2024年10月20日
-      </div>
-      <div class="pub-labels">
-        <div class="pub-labels">
-        <span class="badge">査読有り</span>
-     
-        <span class="badge">筆頭著者</span>
-      </div>
-    </li>
-    
-    <li class="pub-item">
-      <div class="pub-title">
-        <div>
-          <a href="https://ieeexplore.ieee.org/document/10861474" target="_blank">
-            Extended Analysis and Evaluations on a Floating Four-Phase Interleaved Bidirectional DC-DC Converter Utilizing Asymmetric Duty Limit Control
-          </a>	
-        </div>
-        <div class="pub-authors">
-          Shiqiang Liu, Guiyi Dong, Tomokazu Mishima, Ching-Ming Lai		</div>
-        <div class="pub-meta">
-          2024 IEEE Energy Conversion Congress and Exposition (ECCE)&nbsp;2560-2567&nbsp;2024年10月20日&nbsp;&nbsp;
-          <div class="pub-labels">
-        <div class="pub-labels">
-        <span class="badge">査読有り</span>
-      </div>		
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-            
-        
-        <div>
-          <a href="https://ieeexplore.ieee.org/document/10502276" target="_blank">📘 <span class="badge" style="background-color: #ff4d4d; color: white;">Journal Paper</span> Over 98% Efficiency SiC-MOSFET Based Four-Phase Interleaved Bidirectional DC–DC Converter Featuring Wide-Range Voltage Ratio</a>&nbsp;		</div>
-        <div class="pub-authors">
-          Shiqiang Liu, Guiyi Dong, Tomokazu Mishima, Ching-Ming Lai		</div>
-        <div class="pub-meta">
-          IEEE Transactions on Power Electronics&nbsp;39(7) 8436-8455&nbsp;2024年7月&nbsp;&nbsp;
-          
-          <div class="pub-labels">
-        <span class="badge">査読有り</span>		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-            
-        
-        <div>
-          <a href="https://ieeexplore.ieee.org/document/10749798" target="_blank">📘 <span class="badge" style="background-color: #ff4d4d; color: white;">Journal Paper</span> A Fixed-Frequency Single-Phase Resonant Direct AC–AC Converter Integrating Variable Inductor Technique for High-Frequency Induction Heating Applications</a>&nbsp;		</div>
-        <div class="pub-authors">
-          Guiyi Dong, Chu-Wei Lin, Ching-Ming Lai, Shiqiang Liu, Tomokazu Mishima		</div>
-        <div class="pub-meta">
-          IEEE Access&nbsp;12 177711-177722&nbsp;2024年&nbsp;&nbsp;<div class="pub-labels">
-        <span class="badge">査読有り</span>
-        <span class="badge">筆頭著者</span>		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-            
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/published_papers/50190538"target="_blank">📘 <span class="badge" style="background-color: #ff4d4d; color: white;">Journal Paper</span> 誘導加熱システム用の伝導モード交換パルス密度変調を用いた単相Eクラス直接AC-ACコンバータ</a>&nbsp;		</div>
-        <div class="pub-authors">
-          Dong Guiyi, Mishima Tomokazu, Omori Hideki, Lai Ching-Ming		</div>
-        <div class="pub-meta">
-          IEEJ Journal of Industry Applications&nbsp;13(5) 520-529&nbsp;2024年&nbsp;&nbsp;<div class="pub-labels">
-        <span class="badge">査読有り</span>
-        <span class="badge">筆頭著者</span>		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-            
-        
-        <div>
-          <a href="https://ieeexplore.ieee.org/document/10372277" target="_blank">A Single-Phase Direct AC-AC Wireless Power Transfer System Using Conduction Mode-Exchanged Pulse Density Modulation</a>&nbsp;		</div>
-        <div class="pub-authors">
-          Guiyi Dong, Tomokazu Mishima, Hideki Omori, Ching-Ming Lai		</div>
-        <div class="pub-meta">
-          2023 IEEE Transportation Electrification Conference and Expo, Asia-Pacific (ITEC Asia-Pacific)&nbsp;1-5&nbsp;2023年11月28日&nbsp;&nbsp;<div class="pub-labels">
-        <span class="badge">査読有り</span>
-        <span class="badge">筆頭著者</span>		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-            
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/published_papers/50190532"target="_blank">📘 <span class="badge" style="background-color: #ff4d4d; color: white;">Journal Paper</span> Power Control Scheme of Fixed-Frequency Single-Phase Direct AC-AC Converter for Induction Heating Applications</a>&nbsp;		</div>
-        <div class="pub-authors">
-          DONG Guiyi, Tomokazu Mishima, Hideki Omori		</div>
-        <div class="pub-meta">
-          IEEJ Transactions on Industry Applications<div class="pub-labels">
-        <span class="badge">査読有り</span>
-        <span class="badge">筆頭著者</span>		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-            
-        
-        <div>
-          <a href="https://ieeexplore.ieee.org/document/10006107" target="_blank">A Dual-Active Single-Ended Wireless V2H System with Mutually Synchronized Phase-Difference Control Method</a>&nbsp;		</div>
-        <div class="pub-authors">
-          Guiyi Dong, Tomokazu Mishima, Hideki Omori		</div>
-        <div class="pub-meta">
-          2022 IEEE 17th Conference on Industrial Electronics and Applications (ICIEA)&nbsp;9 810-815&nbsp;2022年12月16日&nbsp;&nbsp;<div class="pub-labels">
-        <span class="badge">査読有り</span>
-        <span class="badge">筆頭著者</span>		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-            
-        
-        <div>
-          <a href="https://ieeexplore.ieee.org/document/10058417" target="_blank">A Dual-Active Single-Ended Wireless V2H System with Self-Synchronized Phase-Difference Control Method</a>&nbsp;		</div>
-        <div class="pub-authors">
-          Guiyi Dong, Hideki Omori, Genki Kengaku, Tomokazu Mishima, Jun Tanaka		</div>
-        <div class="pub-meta">
-          2022 IEEE 7th Southern Power Electronics Conference (SPEC)&nbsp;9 1-6&nbsp;2022年12月5日&nbsp;&nbsp;<div class="pub-labels">
-        <span class="badge">査読有り</span>
-        <span class="badge">筆頭著者</span>		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-            
-        
-        <div>
-          <a href="https://ieeexplore.ieee.org/document/9789057" target="_blank">Notch Frequency Generation Methods in Noise Spread Spectrum for Pulse Coding Switching DC-DC Converter</a>&nbsp;		</div>
-        <div class="pub-authors">
-          Guiyi Dong, Shogo Katayama, Yifei Sun, Yasunori Kobori, Anna Kuwana, Haruo Kobayashi		</div>
-        <div class="pub-meta">
-          2022 IEEE 13th Latin America Symposium on Circuits and System (LASCAS)&nbsp;1-4&nbsp;2022年3月1日&nbsp;&nbsp;<div class="pub-labels">
-        <span class="badge">査読有り</span>
-        <span class="badge">筆頭著者</span>		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-            
-        
-        <div>
-          <a href="https://ieeexplore.ieee.org/document/9620522" target="_blank">Adaptive Convergence Method of Notch Frequency in Noise Spread Spectrum for Pulse Coding Switching DC-DC Converter</a>&nbsp;		</div>
-        <div class="pub-authors">
-          Guiyi Dong, Shogo Katayama, Yifei Sun, Yasunori Kobori, Anna Kuwana, Haruo Kobayashi		</div>
-        <div class="pub-meta">
-          2021 IEEE 14th International Conference on ASIC (ASICON)&nbsp;1-4&nbsp;2021年10月26日&nbsp;&nbsp;<div class="pub-labels">
-        <span class="badge">査読有り</span>
-        <span class="badge">筆頭著者</span>		</div>
-    
-        
-          </div>
-    </li>
-          
-    
-    <div class="panel panel-default">
-      
-        <h2 class="pull-left rm-cv-panel-title">
-        MISC	</h2>        
-
-            <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50202549"target="_blank">E<sup>2</sup>級ワイヤレス給電システムの受電側PWM閉ループ電力制御</a>&nbsp;		</div>
-        <div class="pub-authors">
-          YANG Tianyu, DONG Guiyi, 三島智和		</div>
-        <div class="pub-meta">
-          電気学会全国大会講演論文集(CD-ROM)&nbsp;2024&nbsp;2024年&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50202548"target="_blank">ZVZCS補助共振セル方式単相PWMインバータの実機評価-第一報-</a>&nbsp;		</div>
-        <div class="pub-authors">
-          ZHU Shihao, DONG Guiyi, 三島智和, 溝田一貴		</div>
-        <div class="pub-meta">
-          電気学会全国大会講演論文集(CD-ROM)&nbsp;2024&nbsp;2024年&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50202547"target="_blank">E<sup>2</sup>級ワイヤレス電力伝送システムの同期整流とパルス幅変調受信側電力制御</a>&nbsp;		</div>
-        <div class="pub-authors">
-          YANG Tianyu, DONG Guiyi, MISHIMA Tomokazu		</div>
-        <div class="pub-meta">
-          電子情報通信学会技術研究報告(Web)&nbsp;124(239(EE2024 11-18))&nbsp;2024年&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50190559"target="_blank">高電圧比4相インターリーブ双方向DC-DCコンバータのインダクタ電流バランスと電力制御の検討</a>&nbsp;		</div>
-        <div class="pub-authors">
-          LIU Shiqiang, 三島智和, DONG Guiyi, LAI Ching-ming		</div>
-        <div class="pub-meta">
-          電気学会研究会資料(Web)&nbsp;2024(SPC-24-044-050.052-054/MD-24-044-050.052-054) 45-50&nbsp;2024年1月26日&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50190556"target="_blank">非接触エネルギー伝送システム応用単相ダイレクトAC-ACコンバータのデュアルパルス比変調手法</a>&nbsp;		</div>
-        <div class="pub-authors">
-          DONG Guiyi, 三島智和, LIU Shiqiang, LAI Ching-Ming		</div>
-        <div class="pub-meta">
-          電気学会研究会資料(Web)&nbsp;2024(SPC-24-001-017/MD-24-001-017) 73-77&nbsp;2024年1月25日&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50190558"target="_blank">広範囲な直流母線に対応するインターリーブ方式高電圧比双方向DC-DCコンバータ—A New Interleaved Charge-Pump Bidirectional High-Voltage Gain DC-DC Converter with Duty Limit Control Strategy for Wide Range DC Bus Applications—家電・民生研究会・スイッチング電源,家庭向け情報通信機器のエネルギー技術,照明,再生可能エネルギー,一般</a>&nbsp;		</div>
-        <div class="pub-authors">
-          劉 士強, 董 貴義, 賴 慶明, 三島 智和		</div>
-        <div class="pub-meta">
-          電気学会研究会資料. HCA / 家電・民生研究会 [編]&nbsp;2023(15-17・22-30) 19-24&nbsp;2023年5月&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50190555"target="_blank">高周波IH応用ダイレクトAC-ACコンバータの固定周波数パルス変調電力制御手法—A New Power Control of a Fixed-Frequency Single-Phase Direct AC-AC Converter Using A Bidirectional Switch for Induction Heating Applications—半導体電力変換/モータドライブ合同研究会・半導体電力変換一般・モータドライブ一般</a>&nbsp;		</div>
-        <div class="pub-authors">
-          董 貴義, 三島 智和, 大森 英樹		</div>
-        <div class="pub-meta">
-          電気学会研究会資料. SPC = The papers of technical meeting on semiconductor power converter, IEE Japan / 半導体電力変換研究会 [編]&nbsp;2023(18-33) 1-6&nbsp;2023年1月26日&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50194225"target="_blank">広範囲な直流母線に対応するインターリーブ方式高電圧比双方向DC-DCコンバータ</a>&nbsp;		</div>
-        <div class="pub-authors">
-          LIU Shiqiang, DONG Guiyi, LAI Ching-ming, 三島智和		</div>
-        <div class="pub-meta">
-          電気学会研究会資料(Web)&nbsp;(HCA-23-015-017.022-030)&nbsp;2023年&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50190557"target="_blank">ダイレクトAC-AC変換器を応用した電磁誘導方式ワイヤレス給電システムの一検討</a>&nbsp;		</div>
-        <div class="pub-authors">
-          DONG Guiyi, 三島智和, 大森英樹, LAI Ching-Ming		</div>
-        <div class="pub-meta">
-          電気学会研究会資料(Web)&nbsp;2023(SPC-23-160-176.178-181) 121-124&nbsp;2023年7月&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-    <li class="pub-item">
-      
-      <div class="pub-title">
-        
-        
-        
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/misc/50190560"target="_blank">パルスコーディングDC-DCコンバータにおける複合周波数ノッチ特性を有するスペクトラム拡散—Spread Spectrum with Composite Notch Characteristics for Pulse Coding DC-DC Converter—家電・民生研究会・スイッチング電源,家庭向け情報通信機器のエネルギー技術,照明,再生可能エネルギー,一般</a>&nbsp;		</div>
-        <div class="pub-authors">
-          董 貴義, 孫 逸菲, 片山 翔吾, 小堀 康功, 桑名 杏奈, 小林 春夫, 三島 智和		</div>
-        <div class="pub-meta">
-          電気学会研究会資料. HCA / 家電・民生研究会 [編]&nbsp;2022(21・23-31) 25-29&nbsp;2022年5月27日&nbsp;&nbsp;		</div>
-    
-        
-          </div>
-    </li>
-          
-    
-    <div class="panel panel-default">
-      
-    <div class="panel-heading clearfix rm-cv-panel-heading" id="industrial_property_rights">
-        <h2 class="pull-left rm-cv-panel-title">
-        産業財産権	</h2>
-            &nbsp;
-       
-
-            <li class="pub-item">
-      <div class="pub-title">
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/industrial_property_rights/51289158" target="_blank">特開2025-112705 ダイレクトAC-ACコンバータの電力制御回路及び電力制御方法</a>&nbsp;
-        </div>
-        <div class="pub-authors">董 貴義, 三島 智和</div>
-        <div class="pub-meta">国立大学法人神戸大学 | 出願日: 2024年1月20日 | 公開日: 2025年8月1日</div>
-      </div>
-    </li>
-    <li class="pub-item">
-      <div class="pub-title">
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/industrial_property_rights/51289159" target="_blank">特開2025-088491 単相ダイレクトAC-ACコンバータとその電力制御方法</a>&nbsp;
-        </div>
-        <div class="pub-authors">三島 智和, 頼 慶明, 董 貴義</div>
-        <div class="pub-meta">国立大学法人神戸大学 | 出願日: 2023年11月30日 | 公開日: 2025年6月11日</div>
-      </div>
-    </li>
-    <li class="pub-item">
-      <div class="pub-title">
-        <div>
-          <a href="https://researchmap.jp/guiyi_dong/industrial_property_rights/50197868" target="_blank">特開2024-102763 ダイレクトAC-ACコンバータの電力制御回路及び電力制御方法</a>&nbsp;
-        </div>
-        <div class="pub-authors">三島 智和, 董 貴義, 大森 英樹</div>
-        <div class="pub-meta">国立大学法人神戸大学 | 公開日: 2024年</div>
-      </div>
-    </li>
-     
-
-       
-        
-      <!-- Technology Skills section intentionally removed. -->
-
-        
-
-        
-  </div>
-  <div class="w3-container w3-light-grey w3-padding-32" id="Education level">
-    <h2>Education</h2>
-    <p><li> 04/2022–03/2025, Ph.D., Graduate School of Maritime Sciences, Kobe University. </li></p>
-       <p><li> 04/2020-03/2022,　Postgraduate at Gunma University Graduate School of Science and Technology. </li></p>
-       <p><li> 09/2015-06/2019, bachelor at School of Electrical and Information Engineering ,Shandong Jianzhu University. </li></p>
-   </div>
-<!-- The News Section -->
-
-<!-- The Projects Section -->
-
-
- <!-- The Publications Section -->
-  
-
- <div class="w3-container w3-light-grey w3-padding-32" id="Previous research" hidden aria-hidden="true">
-  <h2>Previous research</h2>
-  <h4><li>Dual-Active Single-Ended Wireless V2H System</li></h4>
-  <img style="width:30%;" src="images/IEEE_12.png"> 
-  <img style="width:60%;" src="images/Fig01.png"> 
-
-  <p class="w3-justify">
-    The bidirectional Wireless Power Transfer (WPT) device for vehicle-to-house (V2H) uses a simple, compact single-ended converter and self-synchronized phase-difference control mechanism. This research proposes a way whereby phase difference control could be self-contained on the slave side without mutual communication. This method allows for high-power wireless transmission despite the low coupling coefficient between the transfer coils. The phase difference and transmission power can be altered by changing the MOSFET conduction time on one side without synchronizing the phases on both sides.
-  </p> 
- 
-  <h4><li>Notch Frequency Generation Methods in Noise Spread Spectrum</li></h4>
-  <img style="width:32%;" src="images/atlas200.PNG"> &nbsp&nbsp <img style="width:60%;" src="images/noise_ieee.png">
-  <p class="w3-justify">
-    Two pulse coding control methods for generating notch frequency automatically in noise spread spectrum for switching DC-DC converters are proposed; these are based on our previously proposed method. Our two methods here generate the notch frequency Fn automatically according to the received frequency F in . The first one is a constant frequency PWM-controlled buck DC-DC converter where the clock frequency and coding pulse width are automatically set according to the frequency of the received signal to generate notch characteristics. The second one is a pulse frequency modulation (PFM) pulse coding DC-DC converter which generates a composite notch characteristic where both the constant pulse width and the periodic modulation coding pulse width are automatically matched with input frequency Fin.
-  </p>  
-
-
- 
-
-
-
-
-
-
-
-        <h4><li>Quadruped Robot with Remote Control using Arduino, Freescale KL Series Microcontroller, and PlayStation 2 Game Controller</li></h4>
-  <img style="width:30%;" src="images/4robot.png">
-  <p class="w3-justify">
-    This undergraduate capstone project involved the design and development of a quadruped robot capable of being remotely controlled. The robot's electronic system is powered by an Arduino microcontroller and a Freescale KL series microcontroller, providing a reliable and efficient control platform.
+    <form hidden="" id="publication-controls">
+     <fieldset>
+      <legend>
+       Publications
+      </legend>
+      <label>
+       <input checked="" type="checkbox" value="journal"/>
+       Journal articles
+      </label>
+      <label>
+       <input checked="" type="checkbox" value="conference"/>
+       Conference papers
+      </label>
+      <label>
+       <input checked="" type="checkbox" value="other"/>
+       Other works
+      </label>
+     </fieldset>
+     <label for="sort">
+      Sort by year
+     </label>
+     <select id="sort">
+      <option value="desc">
+       Newest first
+      </option>
+      <option value="asc">
+       Oldest first
+      </option>
+     </select>
+    </form>
+    <p aria-live="polite" data-label="results" id="result-count" role="status">
+    </p>
+    <p hidden="" id="empty">
+     No publications selected.
+    </p>
+    <ul id="publications">
+     <li class="pub-item" data-type="conference" data-year="2026">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/11567959" rel="noopener noreferrer" target="_blank">
+        A Dual-Parameter-Tuned WPT System with Decoupled PFM Control for EV Charging
+       </a>
+      </h3>
+      <p class="authors">
+       Yong Ying, Ching-Ming Lai, Guiyi Dong , Chi Kong Tse
+      </p>
+      <p class="meta">
+       2026 9th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS), Perth, Australia, 2026 · Peer reviewed
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2026">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/11567954" rel="noopener noreferrer" target="_blank">
+        Class-E Direct AC–AC Converter with Input-Polarity-Independent Operation for Wireless Power Transfer
+       </a>
+      </h3>
+      <p class="authors">
+       Yu-Zhi Huang, Guiyi Dong , Ching-Ming Lai, Chi Kong Tse, Shiqiang Liu
+      </p>
+      <p class="meta">
+       2026 9th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS), Perth, Australia, 2026 · Peer reviewed
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2026">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/11567970" rel="noopener noreferrer" target="_blank">
+        Three-Switch Three-Phase Class-E Direct AC–AC Converter for Induction Heating
+       </a>
+      </h3>
+      <p class="authors">
+       Dong Zhou Yang, Guiyi Dong , Kaiwen Chen, Ching-Ming Lai
+      </p>
+      <p class="meta">
+       2026 9th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS), Perth, Australia, 2026 · Peer reviewed
+      </p>
+     </li>
+     <li class="pub-item" data-type="journal" data-year="2025">
+      <span class="publication-type">
+       Journal article
+      </span>
+      <h3>
+       <a href="https://doi.org/10.1109/TIA.2025.3577138" rel="noopener noreferrer" target="_blank">
+        Single-Phase High-Frequency Resonant Direct AC–AC Converter with Constant Off-Time Pulse Coding Modulation for Fluid Water Induction Heating
+       </a>
+      </h3>
+      <p class="authors">
+       Guiyi Dong, Tomokazu Mishima, Shiqiang Liu, Ching-Ming Lai, Liang-Rui Chen
+      </p>
+      <p class="meta">
+       IEEE Transactions on Industry Applications, vol. 61, no. 6, 2025 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="journal" data-year="2025">
+      <span class="publication-type">
+       Journal article
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/10879796" rel="noopener noreferrer" target="_blank">
+        Asymmetrical Duty-Cycle Limit Control-Based Multiport Bidirectional DC–DC Converter for Distributed Energy Storage System Applications
+       </a>
+      </h3>
+      <p class="authors">
+       Shiqiang Liu, Guiyi Dong, Yong Ying, Ching-Ming Lai, Tomokazu Mishima
+      </p>
+      <p class="meta">
+       IEEE Transactions on Power Electronics, vol. 40, no. 7, 2025 · Peer reviewed
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2025">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/11345038" rel="noopener noreferrer" target="_blank">
+        A Zero-Voltage Switching Approach for Low-Voltage Fully GaN-Based DC-Link Inverters in Robotic Brushless Motor Applications
+       </a>
+      </h3>
+      <p class="authors">
+       Guiyi Dong , Y. Sato, Y. Okumatsu
+      </p>
+      <p class="meta">
+       2025 IEEE Transportation Electrification Conference and Expo, Asia-Pacific (ITEC Asia-Pacific), 2025 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2025">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/11345051" rel="noopener noreferrer" target="_blank">
+        A Class-E Direct AC–AC Converter with a Novel Pulse Modulation Strategy for Induction Heating
+       </a>
+      </h3>
+      <p class="authors">
+       Tsung-Han Wu, Guiyi Dong , Ching-Ming Lai, Shiqiang Liu, Yong Ying, Tian Luo, Hideki Omori
+      </p>
+      <p class="meta">
+       2025 IEEE Transportation Electrification Conference and Expo, Asia-Pacific (ITEC Asia-Pacific), 2025 · Peer reviewed
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2025">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/11301572" rel="noopener noreferrer" target="_blank">
+        A Multi-Input High-Gain DC-DC Converter with Hybrid Fuel Cell/Battery Generation for DC-MGs
+       </a>
+      </h3>
+      <p class="authors">
+       Ching-Ming Lai, Ming-Ho Pan, Meng-Zong Chen, Guiyi Dong , Hideki Omori
+      </p>
+      <p class="meta">
+       2025 International Future Energy Electronics Conference (IFEEC), 2025 · Peer reviewed
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2025">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/11325962" rel="noopener noreferrer" target="_blank">
+        Noise Notch Frequency Design for EMI Mitigation in DC-DC Converters Using Digital-to-Time Converter
+       </a>
+      </h3>
+      <p class="authors">
+       Yasunori Kobori, Yifei Sun, Guiyi Dong , Nobukazu Tsukiji, Ramin Khatami, Takuya Arafune, Shogo Katayama, Anna Kuwana, Jianglin Wei, Haruo Kobayashi
+      </p>
+      <p class="meta">
+       2025 IEEE 16th International Conference on ASIC (ASICON), 2025 · Peer reviewed
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2024">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/10861800" rel="noopener noreferrer" target="_blank">
+        Fixed-Off-Time Pulse Coding Modulation for Single-Phase Resonant Direct AC-AC Converter in High-Frequency Induction Heating Systems
+       </a>
+      </h3>
+      <p class="authors">
+       Guiyi Dong, Shiqiang Liu, Tomokazu Mishima, Ching-Ming Lai
+      </p>
+      <p class="meta">
+       2024 IEEE Energy Conversion Congress and Exposition (ECCE), pp. 3420–3426, 2024年10月20日 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2024">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/10861474" rel="noopener noreferrer" target="_blank">
+        Extended Analysis and Evaluations on a Floating Four-Phase Interleaved Bidirectional DC-DC Converter Utilizing Asymmetric Duty Limit Control
+       </a>
+      </h3>
+      <p class="authors">
+       Shiqiang Liu, Guiyi Dong, Tomokazu Mishima, Ching-Ming Lai
+      </p>
+      <p class="meta">
+       2024 IEEE Energy Conversion Congress and Exposition (ECCE) 2560-2567 2024年10月20日 · Peer reviewed
+      </p>
+     </li>
+     <li class="pub-item" data-type="journal" data-year="2024">
+      <span class="publication-type">
+       Journal article
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/10502276" rel="noopener noreferrer" target="_blank">
+        Over 98% Efficiency SiC-MOSFET Based Four-Phase Interleaved Bidirectional DC–DC Converter Featuring Wide-Range Voltage Ratio
+       </a>
+      </h3>
+      <p class="authors">
+       Shiqiang Liu, Guiyi Dong, Tomokazu Mishima, Ching-Ming Lai
+      </p>
+      <p class="meta">
+       IEEE Transactions on Power Electronics 39(7) 8436-8455 2024年7月 · Peer reviewed
+      </p>
+     </li>
+     <li class="pub-item" data-type="journal" data-year="2024">
+      <span class="publication-type">
+       Journal article
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/10749798" rel="noopener noreferrer" target="_blank">
+        A Fixed-Frequency Single-Phase Resonant Direct AC–AC Converter Integrating Variable Inductor Technique for High-Frequency Induction Heating Applications
+       </a>
+      </h3>
+      <p class="authors">
+       Guiyi Dong, Chu-Wei Lin, Ching-Ming Lai, Shiqiang Liu, Tomokazu Mishima
+      </p>
+      <p class="meta">
+       IEEE Access 12 177711-177722 2024年 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="journal" data-year="2024">
+      <span class="publication-type">
+       Journal article
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/published_papers/50190538" rel="noopener noreferrer" target="_blank">
+        誘導加熱システム用の伝導モード交換パルス密度変調を用いた単相Eクラス直接AC-ACコンバータ
+       </a>
+      </h3>
+      <p class="authors">
+       Dong Guiyi, Mishima Tomokazu, Omori Hideki, Lai Ching-Ming
+      </p>
+      <p class="meta">
+       IEEJ Journal of Industry Applications 13(5) 520-529 2024年 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2023">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/10372277" rel="noopener noreferrer" target="_blank">
+        A Single-Phase Direct AC-AC Wireless Power Transfer System Using Conduction Mode-Exchanged Pulse Density Modulation
+       </a>
+      </h3>
+      <p class="authors">
+       Guiyi Dong, Tomokazu Mishima, Hideki Omori, Ching-Ming Lai
+      </p>
+      <p class="meta">
+       2023 IEEE Transportation Electrification Conference and Expo, Asia-Pacific (ITEC Asia-Pacific) 1-5 2023年11月28日 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="journal" data-year="0">
+      <span class="publication-type">
+       Journal article
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/published_papers/50190532" rel="noopener noreferrer" target="_blank">
+        Power Control Scheme of Fixed-Frequency Single-Phase Direct AC-AC Converter for Induction Heating Applications
+       </a>
+      </h3>
+      <p class="authors">
+       DONG Guiyi, Tomokazu Mishima, Hideki Omori
+      </p>
+      <p class="meta">
+       IEEJ Transactions on Industry Applications · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2022">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/10006107" rel="noopener noreferrer" target="_blank">
+        A Dual-Active Single-Ended Wireless V2H System with Mutually Synchronized Phase-Difference Control Method
+       </a>
+      </h3>
+      <p class="authors">
+       Guiyi Dong, Tomokazu Mishima, Hideki Omori
+      </p>
+      <p class="meta">
+       2022 IEEE 17th Conference on Industrial Electronics and Applications (ICIEA) 9 810-815 2022年12月16日 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2022">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/10058417" rel="noopener noreferrer" target="_blank">
+        A Dual-Active Single-Ended Wireless V2H System with Self-Synchronized Phase-Difference Control Method
+       </a>
+      </h3>
+      <p class="authors">
+       Guiyi Dong, Hideki Omori, Genki Kengaku, Tomokazu Mishima, Jun Tanaka
+      </p>
+      <p class="meta">
+       2022 IEEE 7th Southern Power Electronics Conference (SPEC) 9 1-6 2022年12月5日 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2022">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/9789057" rel="noopener noreferrer" target="_blank">
+        Notch Frequency Generation Methods in Noise Spread Spectrum for Pulse Coding Switching DC-DC Converter
+       </a>
+      </h3>
+      <p class="authors">
+       Guiyi Dong, Shogo Katayama, Yifei Sun, Yasunori Kobori, Anna Kuwana, Haruo Kobayashi
+      </p>
+      <p class="meta">
+       2022 IEEE 13th Latin America Symposium on Circuits and System (LASCAS) 1-4 2022年3月1日 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="conference" data-year="2021">
+      <span class="publication-type">
+       Conference paper
+      </span>
+      <h3>
+       <a href="https://ieeexplore.ieee.org/document/9620522" rel="noopener noreferrer" target="_blank">
+        Adaptive Convergence Method of Notch Frequency in Noise Spread Spectrum for Pulse Coding Switching DC-DC Converter
+       </a>
+      </h3>
+      <p class="authors">
+       Guiyi Dong, Shogo Katayama, Yifei Sun, Yasunori Kobori, Anna Kuwana, Haruo Kobayashi
+      </p>
+      <p class="meta">
+       2021 IEEE 14th International Conference on ASIC (ASICON) 1-4 2021年10月26日 · Peer reviewed · First author
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2024">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50202549" rel="noopener noreferrer" target="_blank">
+        E 2 級ワイヤレス給電システムの受電側PWM閉ループ電力制御
+       </a>
+      </h3>
+      <p class="authors">
+       YANG Tianyu, DONG Guiyi, 三島智和
+      </p>
+      <p class="meta">
+       電気学会全国大会講演論文集(CD-ROM) 2024 2024年
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2024">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50202548" rel="noopener noreferrer" target="_blank">
+        ZVZCS補助共振セル方式単相PWMインバータの実機評価-第一報-
+       </a>
+      </h3>
+      <p class="authors">
+       ZHU Shihao, DONG Guiyi, 三島智和, 溝田一貴
+      </p>
+      <p class="meta">
+       電気学会全国大会講演論文集(CD-ROM) 2024 2024年
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2024">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50202547" rel="noopener noreferrer" target="_blank">
+        E 2 級ワイヤレス電力伝送システムの同期整流とパルス幅変調受信側電力制御
+       </a>
+      </h3>
+      <p class="authors">
+       YANG Tianyu, DONG Guiyi, MISHIMA Tomokazu
+      </p>
+      <p class="meta">
+       電子情報通信学会技術研究報告(Web) 124(239(EE2024 11-18)) 2024年
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2024">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50190559" rel="noopener noreferrer" target="_blank">
+        高電圧比4相インターリーブ双方向DC-DCコンバータのインダクタ電流バランスと電力制御の検討
+       </a>
+      </h3>
+      <p class="authors">
+       LIU Shiqiang, 三島智和, DONG Guiyi, LAI Ching-ming
+      </p>
+      <p class="meta">
+       電気学会研究会資料(Web) 2024(SPC-24-044-050.052-054/MD-24-044-050.052-054) 45-50 2024年1月26日
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2024">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50190556" rel="noopener noreferrer" target="_blank">
+        非接触エネルギー伝送システム応用単相ダイレクトAC-ACコンバータのデュアルパルス比変調手法
+       </a>
+      </h3>
+      <p class="authors">
+       DONG Guiyi, 三島智和, LIU Shiqiang, LAI Ching-Ming
+      </p>
+      <p class="meta">
+       電気学会研究会資料(Web) 2024(SPC-24-001-017/MD-24-001-017) 73-77 2024年1月25日
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2023">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50190558" rel="noopener noreferrer" target="_blank">
+        広範囲な直流母線に対応するインターリーブ方式高電圧比双方向DC-DCコンバータ—A New Interleaved Charge-Pump Bidirectional High-Voltage Gain DC-DC Converter with Duty Limit Control Strategy for Wide Range DC Bus Applications—家電・民生研究会・スイッチング電源,家庭向け情報通信機器のエネルギー技術,照明,再生可能エネルギー,一般
+       </a>
+      </h3>
+      <p class="authors">
+       劉 士強, 董 貴義, 賴 慶明, 三島 智和
+      </p>
+      <p class="meta">
+       電気学会研究会資料. HCA / 家電・民生研究会 [編] 2023(15-17・22-30) 19-24 2023年5月
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2023">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50190555" rel="noopener noreferrer" target="_blank">
+        高周波IH応用ダイレクトAC-ACコンバータの固定周波数パルス変調電力制御手法—A New Power Control of a Fixed-Frequency Single-Phase Direct AC-AC Converter Using A Bidirectional Switch for Induction Heating Applications—半導体電力変換/モータドライブ合同研究会・半導体電力変換一般・モータドライブ一般
+       </a>
+      </h3>
+      <p class="authors">
+       董 貴義, 三島 智和, 大森 英樹
+      </p>
+      <p class="meta">
+       電気学会研究会資料. SPC = The papers of technical meeting on semiconductor power converter, IEE Japan / 半導体電力変換研究会 [編] 2023(18-33) 1-6 2023年1月26日
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2023">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50194225" rel="noopener noreferrer" target="_blank">
+        広範囲な直流母線に対応するインターリーブ方式高電圧比双方向DC-DCコンバータ
+       </a>
+      </h3>
+      <p class="authors">
+       LIU Shiqiang, DONG Guiyi, LAI Ching-ming, 三島智和
+      </p>
+      <p class="meta">
+       電気学会研究会資料(Web) (HCA-23-015-017.022-030) 2023年
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2023">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50190557" rel="noopener noreferrer" target="_blank">
+        ダイレクトAC-AC変換器を応用した電磁誘導方式ワイヤレス給電システムの一検討
+       </a>
+      </h3>
+      <p class="authors">
+       DONG Guiyi, 三島智和, 大森英樹, LAI Ching-Ming
+      </p>
+      <p class="meta">
+       電気学会研究会資料(Web) 2023(SPC-23-160-176.178-181) 121-124 2023年7月
+      </p>
+     </li>
+     <li class="pub-item" data-type="other" data-year="2022">
+      <span class="publication-type">
+       Other work
+      </span>
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/misc/50190560" rel="noopener noreferrer" target="_blank">
+        パルスコーディングDC-DCコンバータにおける複合周波数ノッチ特性を有するスペクトラム拡散—Spread Spectrum with Composite Notch Characteristics for Pulse Coding DC-DC Converter—家電・民生研究会・スイッチング電源,家庭向け情報通信機器のエネルギー技術,照明,再生可能エネルギー,一般
+       </a>
+      </h3>
+      <p class="authors">
+       董 貴義, 孫 逸菲, 片山 翔吾, 小堀 康功, 桑名 杏奈, 小林 春夫, 三島 智和
+      </p>
+      <p class="meta">
+       電気学会研究会資料. HCA / 家電・民生研究会 [編] 2022(21・23-31) 25-29 2022年5月27日
+      </p>
+     </li>
+    </ul>
+   </section>
+   <section id="industrial_property_rights">
+    <h2>
+     Industrial Property Rights
+    </h2>
+    <p>
+     Published patent applications; publication does not imply grant. Original Japanese titles and inventor names are retained. New entry checked on 2026-11-21; dates are filing / publication dates.
+    </p>
+    <ul>
+     <li class="pub-item" data-type="patent" data-year="2026">
+      <h3>
+       <a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202603000875945375" rel="noopener noreferrer" target="_blank">
+        特開2026-121063 電気融着継手、及びその給電装置
+       </a>
+      </h3>
+      <p class="authors">
+       董 貴義, 三島 智和, 大室 秀樹, 秋友 俊希, 緒方 太郎
+      </p>
+      <p class="meta">
+       国立大学法人山口大学 / 株式会社クボタケミックス | 特願2025-004109 | 2025-01-10 / 2026-07-23
+      </p>
+     </li>
+     <li class="pub-item" data-type="patent" data-year="2024">
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/industrial_property_rights/51289158" rel="noopener noreferrer" target="_blank">
+        特開2025-112705 ダイレクトAC-ACコンバータの電力制御回路及び電力制御方法
+       </a>
+      </h3>
+      <p class="authors">
+       董 貴義, 三島 智和
+      </p>
+      <p class="meta">
+       国立大学法人神戸大学 | Filed: 2024年1月20日 | Published: 2025年8月1日
+      </p>
+     </li>
+     <li class="pub-item" data-type="patent" data-year="2023">
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/industrial_property_rights/51289159" rel="noopener noreferrer" target="_blank">
+        特開2025-088491 単相ダイレクトAC-ACコンバータとその電力制御方法
+       </a>
+      </h3>
+      <p class="authors">
+       三島 智和, 頼 慶明, 董 貴義
+      </p>
+      <p class="meta">
+       国立大学法人神戸大学 | Filed: 2023年11月30日 | Published: 2025年6月11日
+      </p>
+     </li>
+     <li class="pub-item" data-type="patent" data-year="2024">
+      <h3>
+       <a href="https://researchmap.jp/guiyi_dong/industrial_property_rights/50197868" rel="noopener noreferrer" target="_blank">
+        特開2024-102763 ダイレクトAC-ACコンバータの電力制御回路及び電力制御方法
+       </a>
+      </h3>
+      <p class="authors">
+       三島 智和, 董 貴義, 大森 英樹
+      </p>
+      <p class="meta">
+       国立大学法人神戸大学 | Published: 2024年
+      </p>
+     </li>
+    </ul>
+   </section>
+   <section id="education">
+    <h2>
+     Education
+    </h2>
+    <ul>
+     <li>
+      04/2022–03/2025 · Ph.D., Graduate School of Maritime Sciences, Kobe University.
+     </li>
+     <li>
+      04/2020–03/2022 · Postgraduate, Graduate School of Science and Technology, Gunma University.
+     </li>
+     <li>
+      09/2015–06/2019 · Bachelor, School of Electrical and Information Engineering, Shandong Jianzhu University.
+     </li>
+    </ul>
+   </section>
+   <div aria-hidden="true" class="w3-container w3-light-grey w3-padding-32" hidden="" id="Previous research">
+    <h2>
+     Previous research
+    </h2>
+    <h4>
+     <li>
+      Dual-Active Single-Ended Wireless V2H System
+     </li>
+    </h4>
+    <img src="images/IEEE_12.png" style="width:30%;"/>
+    <img src="images/Fig01.png" style="width:60%;"/>
+    <p class="w3-justify">
+     The bidirectional Wireless Power Transfer (WPT) device for vehicle-to-house (V2H) uses a simple, compact single-ended converter and self-synchronized phase-difference control mechanism. This research proposes a way whereby phase difference control could be self-contained on the slave side without mutual communication. This method allows for high-power wireless transmission despite the low coupling coefficient between the transfer coils. The phase difference and transmission power can be altered by changing the MOSFET conduction time on one side without synchronizing the phases on both sides.
+    </p>
+    <h4>
+     <li>
+      Notch Frequency Generation Methods in Noise Spread Spectrum
+     </li>
+    </h4>
+    <img src="images/atlas200.PNG" style="width:32%;"/>
+    <img src="images/noise_ieee.png" style="width:60%;"/>
+    <p class="w3-justify">
+     Two pulse coding control methods for generating notch frequency automatically in noise spread spectrum for switching DC-DC converters are proposed; these are based on our previously proposed method. Our two methods here generate the notch frequency Fn automatically according to the received frequency F in . The first one is a constant frequency PWM-controlled buck DC-DC converter where the clock frequency and coding pulse width are automatically set according to the frequency of the received signal to generate notch characteristics. The second one is a pulse frequency modulation (PFM) pulse coding DC-DC converter which generates a composite notch characteristic where both the constant pulse width and the periodic modulation coding pulse width are automatically matched with input frequency Fin.
+    </p>
+    <h4>
+     <li>
+      Quadruped Robot with Remote Control using Arduino, Freescale KL Series Microcontroller, and PlayStation 2 Game Controller
+     </li>
+    </h4>
+    <img src="images/4robot.png" style="width:30%;"/>
+    <p class="w3-justify">
+     This undergraduate capstone project involved the design and development of a quadruped robot capable of being remotely controlled. The robot's electronic system is powered by an Arduino microcontroller and a Freescale KL series microcontroller, providing a reliable and efficient control platform.
 
 The chosen method for remote control is a PlayStation 2 (PS2) game controller, allowing the user to seamlessly operate the robot's movements. The controller communicates with the microcontrollers to execute different actions, such as walking, turning, and other pre-programmed movements.
 
 The project required a thorough understanding of robotics, microcontroller programming, and wireless communication. The completed quadruped robot demonstrates the potential applications of such technology in various fields, including exploration, search and rescue, and entertainment.
-  </p>  
-
-  <h4><li>Autonomous Two-Wheeled Self-Balancing Vehicle with Electromagnetic Signal Tracking Using Freescale Microcontrollers</li></h4>
-  <img style="width:30%;" src="images/TPN.jpg">
-  
-  <img style="width:24%;" src="images/AdderNet.png">
-  <p class="w3-justify">
-    In this project, I participated in two Freescale competitions that involved developing an autonomous two-wheeled self-balancing vehicle. The vehicle's control system is powered by a Freescale series microcontroller, which ensures efficient and reliable performance.
+    </p>
+    <h4>
+     <li>
+      Autonomous Two-Wheeled Self-Balancing Vehicle with Electromagnetic Signal Tracking Using Freescale Microcontrollers
+     </li>
+    </h4>
+    <img src="images/TPN.jpg" style="width:30%;"/>
+    <img src="images/AdderNet.png" style="width:24%;"/>
+    <p class="w3-justify">
+     In this project, I participated in two Freescale competitions that involved developing an autonomous two-wheeled self-balancing vehicle. The vehicle's control system is powered by a Freescale series microcontroller, which ensures efficient and reliable performance.
 
     The primary feature of this vehicle is its ability to automatically track electromagnetic signals, which allows it to achieve the goal of autonomous driving. By detecting and following these signals, the vehicle can navigate through various environments without human intervention.
-    
+
     The project required a deep understanding of microcontroller programming, control systems, and signal processing. The successful development of this autonomous two-wheeled self-balancing vehicle showcases the potential of integrating such technology in various applications, such as transportation, logistics, and other areas where autonomous navigation is essential.
-  </p>  
-  </div>
-
-  <!-- The Awards Section -->
-  
-
-  <div class="w3-light-grey w3-center w3-padding-24">
-
-    Welcome to use this website's <a href="https://github.com/dgy924143558/dgy924143558.github.io">source code</a>, just add a link back to here. <a href="https://www.wangYunhe.site/">&#10025;</a></br>
-
-  <!-- Default Statcounter code for Guiyi Dong's Homepage
-  No.
-  <script type="text/javascript">
-  var sc_project=12347113; 
-  var sc_invisible=0; 
-  var sc_security="21aca5d1"; 
-  var sc_https=1; 
-  var scJsHost = "https://";
-  document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
-  "statcounter.com/counter/counter.js'></"+"script>");
-  </script> Visitor Since Feb 2022. Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
-  <noscript>
-    <div class="statcounter"><a title="Web Analytics Made Easy -
-  StatCounter" href="https://statcounter.com/" target="_blank"><img
-  class="statcounter" src="https://c.statcounter.com/12347113/0/21aca5d1/0/"
-  alt="Web Analytics Made Easy - StatCounter"></a></div>
-  </noscript>
-  <!-- End of Statcounter Code -->
-
-  </div>
-
-  <!-- End page content -->
-</div>
-
-<script>
-// Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
-
-
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-
-</body>
+    </p>
+   </div>
+   <footer>
+    You are welcome to use this website’s
+    <a href="https://github.com/dgy924143558/dgy924143558.github.io">
+     source code
+    </a>
+    with a link back to this page.
+    <a href="https://www.wangYunhe.site/">
+     ☆
+    </a>
+   </footer>
+  </main>
+  <script defer="" src="homepage.js">
+  </script>
+ </body>
 </html>
