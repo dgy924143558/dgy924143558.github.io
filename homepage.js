@@ -41,3 +41,23 @@ emailDialog.addEventListener('click', event => {
   if (event.clientX < rect.left || event.clientX > rect.right ||
       event.clientY < rect.top || event.clientY > rect.bottom) emailDialog.close();
 });
+
+const photoDialog = document.querySelector('#photo-dialog');
+document.querySelectorAll('.photo-trigger').forEach(trigger => {
+  trigger.addEventListener('click', event => {
+    if (typeof photoDialog.showModal !== 'function') return;
+    event.preventDefault();
+    const image = photoDialog.querySelector('img');
+    image.src = trigger.href;
+    image.alt = trigger.querySelector('img').alt;
+    photoDialog.querySelector('.photo-caption').textContent = trigger.closest('figure').querySelector('figcaption').textContent;
+    photoDialog.showModal();
+  });
+});
+photoDialog.querySelector('.photo-close').addEventListener('click', () => photoDialog.close());
+photoDialog.addEventListener('click', event => {
+  if (event.target !== photoDialog) return;
+  const rect = photoDialog.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right ||
+      event.clientY < rect.top || event.clientY > rect.bottom) photoDialog.close();
+});
